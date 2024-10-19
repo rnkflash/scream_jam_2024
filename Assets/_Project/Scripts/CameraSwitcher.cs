@@ -9,6 +9,7 @@ namespace _Project.Scripts
         [SerializeField] private GameObject topDownCamera;
         [SerializeField] private GameObject carInteriorCamera;
         [SerializeField] private GameObject fpsCamera;
+        [SerializeField] private GameObject sceneLight;
         
         private int current;
         private Cameras currentCamera = Cameras.FPS;
@@ -29,6 +30,11 @@ namespace _Project.Scripts
 
         void Update()
         {
+            if (Input.GetKeyDown(KeyCode.L))
+            {
+                sceneLight.SetActive(!sceneLight.activeSelf);
+            }
+            
             if (Input.GetKeyDown(KeyCode.C))
             {
                 int next = current + 1;
