@@ -38,7 +38,6 @@ namespace _Project.Scripts.locations.road
 
             for (int i = 0; i < tiles; i++)
             {
-                Debug.Log(gameObject.name + ".CreateNextTile " + i);
                 CreateNextTile();
             }
         }
