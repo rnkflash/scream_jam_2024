@@ -1,3 +1,4 @@
+using _Project.Scripts.enums;
 using UnityEngine;
 
 namespace _Project.Scripts
@@ -35,6 +36,11 @@ namespace _Project.Scripts
 
             // Breaking Input
             car.isBreaking = Input.GetKey(KeyCode.Space);
+
+            if (Input.GetKeyDown(KeyCode.C))
+            {
+                CameraSwitcher.Instance.SwitchCamera(Cameras.TruckOutside);
+            }
         }
     }
 }

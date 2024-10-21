@@ -1,31 +1,25 @@
 using System;
+using _Project.Scripts.enums;
+using _Project.Scripts.eventbus;
+using _Project.Scripts.eventbus.events;
+using _Project.Scripts.utils;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace _Project.Scripts
 {
-    public class CameraSwitcher : MonoBehaviour
+    public class CameraSwitcher : Singleton<CameraSwitcher>
     {
         [SerializeField] private GameObject topDownCamera;
         [SerializeField] private GameObject carInteriorCamera;
         [SerializeField] private GameObject fpsCamera;
         [SerializeField] private GameObject sceneLight;
         
-        private int current;
-        private Cameras currentCamera = Cameras.FPS;
-
-        enum Cameras
-        {
-            FPS,
-            TruckInterior,
-            TruckOutside
-        }
-        
         void Start()
         {
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
-            SwitchCamera(0);
+            SwitchCamera(Cameras.FPS);
         }
 
         void Update()
@@ -35,14 +29,6 @@ namespace _Project.Scripts
                 sceneLight.SetActive(!sceneLight.activeSelf);
             }
             
-            if (Input.GetKeyDown(KeyCode.C))
-            {
-                int next = current + 1;
-                if (next >= Enum.GetValues(typeof(Cameras)).Length)
-                    next = 0;
-                SwitchCamera(next);
-            }
-
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 if (Screen.fullScreenMode == FullScreenMode.Windowed)
@@ -57,16 +43,15 @@ namespace _Project.Scripts
             }
         }
 
-        private void SwitchCamera(int next)
+        public void SwitchCamera(Cameras camera)
         {
-            current = next;
-            currentCamera = (Cameras)current;
-
+            EventBus<NoInteractableOnTarget>.Pub(new NoInteractableOnTarget());
+            
             carInteriorCamera.SetActive(false);
             topDownCamera.SetActive(false);
             fpsCamera.SetActive(false);
             
-            switch (currentCamera)
+            switch (camera)
             {
                 case Cameras.FPS:
                     fpsCamera.SetActive(true);
@@ -80,6 +65,11 @@ namespace _Project.Scripts
                 default:
                     throw new ArgumentOutOfRangeException();
             }
+        }
+
+        public GameObject GetFPSController()
+        {
+            return fpsCamera;
         }
     }
 }

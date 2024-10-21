@@ -1,4 +1,5 @@
 using _Project.Scripts;
+using _Project.Scripts.enums;
 using UnityEngine;
 
 public class TopDownCamera : MonoBehaviour
@@ -24,5 +25,10 @@ public class TopDownCamera : MonoBehaviour
 
         // Breaking Input
         car.isBreaking = Input.GetKey(KeyCode.Space);
+        
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            CameraSwitcher.Instance.SwitchCamera(Cameras.TruckInterior);
+        }
     }
 }
