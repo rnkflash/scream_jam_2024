@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c739504fb024828b5eb9154c8a33d44, type: 3}
+  m_Name: road generator
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  roadPref_Straight: {fileID: 146334, guid: d6443523979df2949b547e3a618db83c, type: 3}
+  roadPrefR_Light: {fileID: 139998, guid: 8158eddd7e73500489da79e25e900a15, type: 3}
+  roadPrefL_Light: {fileID: 170304, guid: 0704186464543664893a845b55b68d8a, type: 3}
+  roadPrefR_Easy: {fileID: 155278, guid: 534184623db971341a7fbde07a802a2a, type: 3}
+  roadPrefL_Easy: {fileID: 111410, guid: 4e0b715325630ff48bfd12c95f08910d, type: 3}
+  roadPrefR_Medium: {fileID: 110992, guid: 3a4cb4da1074adf41a91afec6cee9426, type: 3}
+  roadPrefL_Medium: {fileID: 146076, guid: 2fa06f59e2d6ee14caaa7fc23e547475, type: 3}
+  roadPrefR_Hard: {fileID: 188586, guid: 1ecccfd6ed3376b4ca1471cb2a6785a7, type: 3}
+  roadPrefL_Hard: {fileID: 151658, guid: e4d9877a88f83bf45a05484d99a553b9, type: 3}
+  roadPrefR_Extreme: {fileID: 103114, guid: 8109ae466b4323b4ca01f2f796200e42, type: 3}
+  roadPrefL_Extreme: {fileID: 124108, guid: 9d944d57040e51d49bfbb8a440d6019a, type: 3}
+  roadPref_Up: {fileID: 110996, guid: 8e32e0d81aac2de46b36a6f075c6884b, type: 3}
+  roadPref_Down: {fileID: 157562, guid: feb019374ed7c7d43b121bcd3264fcf0, type: 3}
+  roadPref_LeanR: {fileID: 109886, guid: 81ebd614b74dd44459faa06df0875b3c, type: 3}
+  roadPref_LeanL: {fileID: 103164, guid: 06838242ef9ae6549a20c1cd5490927b, type: 3}
+  hillsCount:
+  - {fileID: 121628, guid: 053c5f8a5f2dbd8488496cb2691323cb, type: 3}
+  - {fileID: 191226, guid: c937ee111c2f3fa4f954d37295d6cdf9, type: 3}
+  obstaclesCount: []
+  propsCount:
+  - {fileID: 114978, guid: 5f881c6d4d3960d49b01801a2dda35cf, type: 3}
+  - {fileID: 165628, guid: 473521c8aaed86344bf003199c63a362, type: 3}
+  trafficCount: []
+  roadHardess: 35
+  hillsPercentage: 10
+  traffic: 0
+  spoilers: 0
+  sideProps: 35
+  maxRoadHeight: 10
