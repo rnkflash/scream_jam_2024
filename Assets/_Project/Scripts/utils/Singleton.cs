@@ -48,7 +48,7 @@ namespace _Project.Scripts.utils
         }
         private void OnDestroy()
         {
-            m_ShuttingDown = true;
+            //m_ShuttingDown = true;
         }
     }
 }
