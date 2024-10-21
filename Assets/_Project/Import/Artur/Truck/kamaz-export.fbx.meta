@@ -3,7 +3,12 @@ guid: 3c2699adde85732479e3e132f5365d44
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: hoxsvl_wheel_v1_mat
+    second: {fileID: 2100000, guid: a3f6894e4c4d80245876552825f3d877, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

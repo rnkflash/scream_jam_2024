@@ -3,7 +3,22 @@ guid: a43cb55e1a040bd4a89121e40fc5a748
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: hoxsvl_wheel_v1_mat
+    second: {fileID: 2100000, guid: a3f6894e4c4d80245876552825f3d877, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "\u041C\u0430\u0442\u0435\u0440\u0438\u0430\u043B.001"
+    second: {fileID: 2100000, guid: 6e17927234c79434085c18c5efd9f7f8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "\u041C\u0430\u0442\u0435\u0440\u0438\u0430\u043B.002"
+    second: {fileID: 2100000, guid: e22e556c1097510469493a3913fcacae, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
