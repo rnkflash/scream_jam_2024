@@ -1,4 +1,8 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using Sirenix.OdinInspector;
+using Sirenix.Utilities;
 using UnityEngine;
 
 namespace _Project.Scripts
@@ -21,6 +25,26 @@ namespace _Project.Scripts
         // Wheels
         [SerializeField] private List<Transform> frontWheelTransforms;
         [SerializeField] private List<Transform> rearWheelTransforms;
+
+
+        [SerializeField] private Transform trailerConnector;
+        [SerializeField] private float trailerDetectorRadius = 0.7f;
+        [SerializeField] private TrailerScript startingTrailer;
+        [HideInInspector] public TrailerScript trailer;
+        private Rigidbody rigidBody;
+        private Vector3 centerOfMassDefault = new Vector3(0, 0.59f, -0.59f);
+        private Vector3 centerOfMassWithTrailer = new Vector3(0, 0.59f, 1.47f);
+
+        private void Awake()
+        {
+            rigidBody = GetComponent<Rigidbody>();
+        }
+
+        private void Start()
+        {
+            rigidBody.centerOfMass = centerOfMassDefault;
+            InitStartingTrailer();
+        }
 
         private void FixedUpdate() {
             HandleMotor();
@@ -73,6 +97,45 @@ namespace _Project.Scripts
             wheelCollider.GetWorldPose(out pos, out rot);
             wheelTransform.rotation = rot;
             wheelTransform.position = pos;
+        }
+
+        private void InitStartingTrailer() 
+        {
+            if (startingTrailer != null)
+            {
+                trailer = startingTrailer;
+                trailer.ActivateHinge(trailerConnector, rigidBody);
+                rigidBody.centerOfMass = centerOfMassWithTrailer;
+            }
+        }
+
+        [Button]
+        public void AttachDetachTrailer()
+        {
+            if (this.trailer == null)
+            {
+                var hits = Physics.SphereCastAll(trailerConnector.position, trailerDetectorRadius, -transform.up, 0.1f); 
+                if (hits.Length > 0)
+                {
+                    hits.FirstOrDefault(raycastHit =>
+                    {
+                        if (raycastHit.transform.gameObject.TryGetComponent(out TrailerScript trailer))
+                        {
+                            trailer.ActivateHinge(trailerConnector, rigidBody);
+                            this.trailer = trailer;
+                            rigidBody.centerOfMass = centerOfMassWithTrailer;
+                            return true;
+                        }
+                        return false;
+                    });
+                }    
+            }
+            else
+            {
+                trailer.DeactivateHinge();
+                trailer = null;
+                rigidBody.centerOfMass = centerOfMassDefault;
+            }
         }
     }
 }

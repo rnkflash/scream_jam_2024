@@ -4,6 +4,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using _Project.Scripts;
 
 public class roadGenerate : MonoBehaviour
 {
@@ -109,7 +110,7 @@ public class roadGenerate : MonoBehaviour
             Instantiate(loadingRoadPrefab, lastRoadTilePosition, Quaternion.Euler(lastRoadTileEndRotation), parentForTiles) as
                 GameObject;
         lastTile = GameObject.Find("road_straight(Clone)"); //to find a distance between player and this segment
-        player ??= GameObject.Find("player_vehicle");
+        player ??= GameObject.Find("PlayerCar");
 
         roadHardess =
             Mathf.Clamp(roadHardess, 0,
