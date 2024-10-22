@@ -19,8 +19,7 @@ namespace _Project.Scripts.dialog
 
         private void OnClick()
         {
-            if (dialogManager.state == State.Active)
-                dialogManager.Click_Window();
+            dialogManager.Click_Window();
         }
     }
 }

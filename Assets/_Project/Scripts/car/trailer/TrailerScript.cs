@@ -8,6 +8,7 @@ namespace _Project.Scripts
     public class TrailerScript : MonoBehaviour
     {
         [SerializeField] private Transform trailerConnector;
+        [SerializeField] private List<Transform> recieverPorts;
         private HingeJoint hingeJoint;
 
         private void Awake()
@@ -24,6 +25,16 @@ namespace _Project.Scripts
         public void DeactivateHinge()
         {
             hingeJoint.connectedBody = null;
+        }
+
+        public List<Transform> GetReceiverPorts()
+        {
+            return recieverPorts;
+        }
+
+        public bool IsAttached()
+        {
+            return hingeJoint.connectedBody;
         }
     }
 }

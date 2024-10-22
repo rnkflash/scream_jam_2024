@@ -209,7 +209,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!108 &410087040
 Light:
   m_ObjectHideFlags: 0
@@ -571,26 +571,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &841528600 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3686079210952299930, guid: 0146ed6a551633b4d97aee04fcb7d1fb,
-    type: 3}
-  m_PrefabInstance: {fileID: 1434364455296026630}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &841528605
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 841528600}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64d50596531046d5975a60ac46624f6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  npcName: Josef
-  interactHint: press E to talk
 --- !u!114 &923102315 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4094011683184477041, guid: d536fa71dd00cf349a228e41212ace48,
@@ -761,6 +741,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4094011681938070648, guid: d536fa71dd00cf349a228e41212ace48,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 10.000122
       objectReference: {fileID: 0}
     - target: {fileID: 4094011683009168357, guid: d536fa71dd00cf349a228e41212ace48,
         type: 3}
@@ -1201,11 +1186,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3686079210952299930, guid: 0146ed6a551633b4d97aee04fcb7d1fb,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 841528605}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0146ed6a551633b4d97aee04fcb7d1fb, type: 3}
 --- !u!1001 &1771954689678827809
 PrefabInstance:
@@ -1223,7 +1204,7 @@ PrefabInstance:
     - target: {fileID: 7612128018542440422, guid: 871e4a80e89f1f249a23c04fa52c5b58,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -65.63
       objectReference: {fileID: 0}
     - target: {fileID: 7612128018542440422, guid: 871e4a80e89f1f249a23c04fa52c5b58,
         type: 3}
@@ -1233,7 +1214,7 @@ PrefabInstance:
     - target: {fileID: 7612128018542440422, guid: 871e4a80e89f1f249a23c04fa52c5b58,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 80.54
       objectReference: {fileID: 0}
     - target: {fileID: 7612128018542440422, guid: 871e4a80e89f1f249a23c04fa52c5b58,
         type: 3}

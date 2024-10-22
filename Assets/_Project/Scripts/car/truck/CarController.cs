@@ -121,10 +121,13 @@ namespace _Project.Scripts
                     {
                         if (raycastHit.transform.gameObject.TryGetComponent(out TrailerScript trailer))
                         {
-                            trailer.ActivateHinge(trailerConnector, rigidBody);
-                            this.trailer = trailer;
-                            rigidBody.centerOfMass = centerOfMassWithTrailer;
-                            return true;
+                            if (trailer.enabled)
+                            {
+                                trailer.ActivateHinge(trailerConnector, rigidBody);
+                                this.trailer = trailer;
+                                rigidBody.centerOfMass = centerOfMassWithTrailer;
+                                return true;    
+                            }
                         }
                         return false;
                     });

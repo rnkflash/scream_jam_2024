@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using _Project.Scripts.utils;
 using Doublsb.Dialog;
 using Sirenix.OdinInspector;
@@ -10,14 +11,36 @@ namespace _Project.Scripts.dialog
     {
         [SerializeField] private DialogManager dialogManager;
 
-        [Button]
         public void Say(string whatToSay)
+        {
+            Say(new DialogData(whatToSay, "Li"));
+        }
+        
+        public void Say(params string[] values)
         {
             var dialogTexts = new List<DialogData>();
 
-            dialogTexts.Add(new DialogData(whatToSay, "Li"));
-
-            dialogManager.Show(dialogTexts);
+            values.ToList().ForEach(s =>
+                {
+                    var dialogData = new DialogData(s, "Li");
+                    dialogTexts.Add(dialogData);
+                }
+            ); 
+            Say(dialogTexts);
+        }
+        
+        public void Say(params DialogData[] values)
+        {
+            Say(values.ToList());
+        }
+        
+        [Button]
+        public void Say(List<DialogData> whatToSay)
+        {
+            dialogManager.Hide();
+            
+            
+            dialogManager.Show(whatToSay);
         }
     }
 }
