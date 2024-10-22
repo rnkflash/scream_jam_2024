@@ -16,6 +16,7 @@ namespace _Project.Scripts.npc
         [SerializeField] private string interactHint = "press E to talk";
 
         [SerializeField] private CargoReceiver cargoReceiver;
+        private bool babkiVidal;
         
         public void Interact()
         {
@@ -46,11 +47,20 @@ namespace _Project.Scripts.npc
                     
                     break;
                 case CargoReceiver.ReceiverState.CargoReceived:
-
-                    DialogSystem.Instance.Say(
+                    if (!babkiVidal)
+                    {
+                        DialogSystem.Instance.Say(
                             new DialogData("Молодец! вот твои бабки", npcName, GiveBabki),
                             new DialogData("А теперь ед на другую базу за новым грузом!", npcName)
+                        );    
+                    }
+                    else
+                    {
+                        DialogSystem.Instance.Say(
+                            new DialogData("А теперь ед на другую базу за новым грузом!", npcName)
                         );
+                    }
+                    
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
@@ -60,6 +70,7 @@ namespace _Project.Scripts.npc
         private void GiveBabki()
         {
             EventBus<AddMoney>.Pub(new AddMoney(100));
+            babkiVidal = true;
         }
 
         public string GetName()
