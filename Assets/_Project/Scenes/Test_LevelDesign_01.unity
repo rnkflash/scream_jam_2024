@@ -806,9 +806,9 @@ MonoBehaviour:
   - {fileID: 122490, guid: ae33458d538698141aadb783d0bd8b2d, type: 3}
   roadHardess: 32
   hillsPercentage: 9
-  traffic: 0
+  traffic: 66
   spoilers: 0
-  sideProps: 37
+  sideProps: 5
   maxRoadHeight: 10
   lastRoadTilePosition: {x: 0, y: -0.5, z: 0}
   lastRoadTileEndRotation: {x: 0, y: 0, z: 0}
