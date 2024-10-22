@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using _Project.Scripts.locations;
 using Sirenix.OdinInspector;
 using Sirenix.Utilities;
 using UnityEngine;
@@ -29,11 +30,12 @@ namespace _Project.Scripts
 
         [SerializeField] private Transform trailerConnector;
         [SerializeField] private float trailerDetectorRadius = 0.7f;
-        [SerializeField] private TrailerScript startingTrailer;
-        [HideInInspector] public TrailerScript trailer;
+        [SerializeField] public TrailerScript trailer;
         private Rigidbody rigidBody;
         private Vector3 centerOfMassDefault = new Vector3(0, 0.59f, -0.59f);
         private Vector3 centerOfMassWithTrailer = new Vector3(0, 0.59f, 1.47f);
+
+        [SerializeField] private Transform parentForTrailers;
 
         private void Awake()
         {
@@ -43,7 +45,9 @@ namespace _Project.Scripts
         private void Start()
         {
             rigidBody.centerOfMass = centerOfMassDefault;
-            InitStartingTrailer();
+            
+            if (trailer && !trailer.IsAttached())
+                InitStartingTrailer();
         }
 
         private void FixedUpdate() {
@@ -101,15 +105,11 @@ namespace _Project.Scripts
 
         private void InitStartingTrailer() 
         {
-            if (startingTrailer != null)
-            {
-                trailer = startingTrailer;
-                trailer.ActivateHinge(trailerConnector, rigidBody);
-                rigidBody.centerOfMass = centerOfMassWithTrailer;
-            }
+            trailer.ActivateHinge(trailerConnector, rigidBody);
+            rigidBody.centerOfMass = centerOfMassWithTrailer;
+            trailer.transform.SetParent(parentForTrailers);
         }
 
-        [Button]
         public void AttachDetachTrailer()
         {
             if (this.trailer == null)
@@ -126,6 +126,7 @@ namespace _Project.Scripts
                                 trailer.ActivateHinge(trailerConnector, rigidBody);
                                 this.trailer = trailer;
                                 rigidBody.centerOfMass = centerOfMassWithTrailer;
+                                trailer.transform.SetParent(parentForTrailers);
                                 return true;    
                             }
                         }
@@ -136,6 +137,22 @@ namespace _Project.Scripts
             else
             {
                 trailer.DeactivateHinge();
+                
+                var hits = Physics.SphereCastAll(trailerConnector.position, 5.0f, -transform.up, 10.0f); 
+                if (hits.Length > 0)
+                {
+                    hits.FirstOrDefault(raycastHit =>
+                    {
+                        var loca = raycastHit.transform.gameObject.GetComponentInParent<Location>();
+                        if (loca)
+                        {
+                            trailer.transform.SetParent(loca.transform);
+                            return true; 
+                        }
+                        return false;
+                    });
+                }
+                
                 trailer = null;
                 rigidBody.centerOfMass = centerOfMassDefault;
             }

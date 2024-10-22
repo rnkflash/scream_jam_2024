@@ -20,6 +20,7 @@ namespace _Project.Scripts
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
             SwitchCamera(Cameras.FPS);
+            sceneLight.SetActive(false);
         }
 
         void Update()

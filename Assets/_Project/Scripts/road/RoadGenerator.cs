@@ -1,9 +1,8 @@
-﻿using System.Collections.Generic;
-using _Project.Scripts.scriptables;
+﻿using _Project.Scripts.scriptables;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace _Project.Scripts.locations.road
+namespace _Project.Scripts.road
 {
     public class RoadGenerator : MonoBehaviour
     {

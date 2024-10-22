@@ -1,14 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using _Project.Scripts.dialog;
 using _Project.Scripts.eventbus;
 using _Project.Scripts.eventbus.events;
 using _Project.Scripts.interaction;
-using _Project.Scripts.locations.a_point;
 using Doublsb.Dialog;
 using UnityEngine;
 
-namespace _Project.Scripts.npc
+namespace _Project.Scripts.locations.a_point.npc
 {
     public class PointAManager : MonoBehaviour, IInteractable
     {

@@ -1,5 +1,5 @@
 ﻿using System;
-using _Project.Scripts.locations.road;
+using _Project.Scripts.road;
 using _Project.Scripts.scriptables;
 using UnityEngine;
 

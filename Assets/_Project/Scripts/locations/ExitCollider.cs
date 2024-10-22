@@ -21,10 +21,10 @@ namespace _Project.Scripts.locations
         private void OnTriggerEnter(Collider other)
         {
             if (isTriggered) return;
-            isTriggered = true;
             var car = other.GameObject().GetComponent<CarController>();
             if (car != null)
             {
+                isTriggered = true;
                 location.OnExit(gameObject.name);
             }
         }
