@@ -190,6 +190,7 @@ MonoBehaviour:
   - {fileID: -6788687691596122038}
   - {fileID: -7866630309363522508}
   - {fileID: 4154927385996033873}
+  - {fileID: 7063920250754761247}
 --- !u!114 &849379129802519247
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -383,6 +384,49 @@ MonoBehaviour:
   maskChannel:
     m_OverrideState: 0
     m_Value: 0
+  GlobalPostProcessingSettings:
+    m_OverrideState: 0
+    m_Value: 0
+--- !u!114 &7063920250754761247
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 473c559cd34f83d40960401327e523c7, type: 3}
+  m_Name: UltimateVignette
+  m_EditorClassIdentifier: 
+  active: 1
+  enable:
+    m_OverrideState: 1
+    m_Value: 1
+  vignetteShape:
+    m_OverrideState: 0
+    m_Value: 0
+  center:
+    m_OverrideState: 0
+    m_Value: {x: 0.5, y: 0.5}
+  vignetteAmount:
+    m_OverrideState: 0
+    m_Value: 50
+  vignetteFineTune:
+    m_OverrideState: 0
+    m_Value: -10
+  edgeSoftness:
+    m_OverrideState: 0
+    m_Value: 1.5
+  edgeBlend:
+    m_OverrideState: 0
+    m_Value: 0
+  innerColorAlpha:
+    m_OverrideState: 0
+    m_Value: 0
+  innerColor:
+    m_OverrideState: 0
+    m_Value: {r: 0, g: 0, b: 0, a: 0}
   GlobalPostProcessingSettings:
     m_OverrideState: 0
     m_Value: 0
