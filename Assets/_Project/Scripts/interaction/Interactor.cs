@@ -11,6 +11,8 @@ namespace _Project.Scripts.interaction
         [SerializeField] private float interactionRange = 2.0f;
 
         private IInteractable currentlyLookingAt;
+
+        public static bool disableAllInteractors;
         
         private void Start()
         {
@@ -24,6 +26,13 @@ namespace _Project.Scripts.interaction
 
         private void Update()
         {
+            if (disableAllInteractors)
+            {
+                if (currentlyLookingAt != null)
+                    OnStopLooking();
+                return;
+            }
+            
             var interactable = RayCast();
             
             if (Input.GetKeyDown(KeyCode.E))

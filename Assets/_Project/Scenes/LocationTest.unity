@@ -1345,6 +1345,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 245.43
       objectReference: {fileID: 0}
+    - target: {fileID: 9086317836598087335, guid: 871e4a80e89f1f249a23c04fa52c5b58,
+        type: 3}
+      propertyPath: useSprintBar
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

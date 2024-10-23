@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using _Project.Scripts.interaction;
 using _Project.Scripts.utils;
 using Doublsb.Dialog;
 using Sirenix.OdinInspector;
@@ -38,9 +40,17 @@ namespace _Project.Scripts.dialog
         public void Say(List<DialogData> whatToSay)
         {
             dialogManager.Hide();
-            
-            
             dialogManager.Show(whatToSay);
+        }
+
+        private void Start()
+        {
+            dialogManager.Hide();
+        }
+
+        private void Update()
+        {
+            Interactor.disableAllInteractors = dialogManager.state != State.Deactivate;
         }
     }
 }

@@ -11,10 +11,15 @@ namespace _Project.Scripts.dialog
 
         private void Update()
         {
-            if (Input.GetMouseButtonDown(0))
+            if (dialogManager.state == State.Deactivate)
+                return;
+            
+            if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.E))
             {
                 OnClick();    
             }
+            
+            
         }
 
         private void OnClick()
