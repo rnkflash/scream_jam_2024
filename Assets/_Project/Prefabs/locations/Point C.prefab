@@ -117,7 +117,7 @@ GameObject:
   - component: {fileID: 2742382368833738499}
   - component: {fileID: 1268051318327394810}
   m_Layer: 0
-  m_Name: "Point \u0421"
+  m_Name: Point C
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
