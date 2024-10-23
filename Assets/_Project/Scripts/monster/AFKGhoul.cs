@@ -1,3 +1,4 @@
+using System.Collections;
 using _Project.Scripts.eventbus;
 using _Project.Scripts.eventbus.events;
 using _Project.Scripts.player;
@@ -23,12 +24,16 @@ namespace _Project.Scripts.monster
         [SerializeField] private GameObject model;
 
         [SerializeField] private AudioClip huntingRoar;
+        
+        [SerializeField] private float lifeTime = 30.0f;
         private AudioSource audioSource;
 
         private bool isTriggered;
 
         private float timer;
         private State state = State.INACTIVE;
+
+        private bool finishHunting;
         private enum State
         {
             INACTIVE, APPEARING, HUNTING
@@ -42,15 +47,33 @@ namespace _Project.Scripts.monster
         }
 
         [Button]
-        public void StartHunting(GameObject huntingGround)
+        public void StartHunting(GameObject huntingGround, float huntingTime)
         {
             if (state != State.INACTIVE) return;
+            StopAllCoroutines();
+            finishHunting = false;
             
             this.huntingGround = huntingGround;
 
             state = State.APPEARING;
             timer = Random.Range(appearTimeMin, appearTimeMax);
             huntingSphere.radius = 1.0f;
+
+            StartCoroutine(DisappearTimer(huntingTime));
+        }
+        
+        private void ContinueHunting()
+        {
+            if (state != State.INACTIVE) return;
+            state = State.APPEARING;
+            timer = Random.Range(appearTimeMin, appearTimeMax);
+            huntingSphere.radius = 1.0f;
+        }
+
+        private IEnumerator DisappearTimer(float huntingTime)
+        {
+            yield return new WaitForSeconds(huntingTime);
+            finishHunting = true;
         }
 
         private void Update()
@@ -82,7 +105,7 @@ namespace _Project.Scripts.monster
             model.SetActive(false);
             huntingSphere.radius = 1.0f;
 
-            StartHunting(huntingGround);
+            if (!finishHunting) ContinueHunting();
         }
 
         private void Appear()
