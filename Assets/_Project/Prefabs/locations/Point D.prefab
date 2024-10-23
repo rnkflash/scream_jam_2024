@@ -115,7 +115,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2742382368833738499}
-  - component: {fileID: 8182817066946915131}
   - component: {fileID: 5256656581017994067}
   m_Layer: 0
   m_Name: Point D
@@ -275,23 +274,6 @@ Transform:
   - {fileID: 68971351490444197}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8182817066946915131
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 53343339370712243}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d86024e9c3c190a4e91bc7e360c6bf34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  start: {fileID: 5547130684413557643}
-  roadGenerator: {fileID: 4535978194716732048}
-  exit1: {fileID: 2292114988829128161}
-  nextLocationPrefab: {fileID: 53343339370712243, guid: 0146ed6a551633b4d97aee04fcb7d1fb,
-    type: 3}
 --- !u!114 &5256656581017994067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -307,7 +289,6 @@ MonoBehaviour:
   start: {fileID: 5547130684413557643}
   roadGenerator: {fileID: 4535978194716732048}
   exit1: {fileID: 2292114988829128161}
-  nextLocationPrefab: {fileID: 0}
 --- !u!1 &385297106163322328
 GameObject:
   m_ObjectHideFlags: 0

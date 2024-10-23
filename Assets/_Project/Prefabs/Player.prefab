@@ -5787,6 +5787,8 @@ MonoBehaviour:
   - {fileID: 53343339370712243, guid: c7e1a9590a911e54ca97a0b583947edb, type: 3}
   - {fileID: 53343339370712243, guid: 55bbf6b009f11ee4396c0cb7521a39a3, type: 3}
   - {fileID: 53343339370712243, guid: 1c1ddbb2fa7de6c4c8bb926f9749cd04, type: 3}
+  - {fileID: 53343339370712243, guid: 7c84ad84b795da549a8506541ce67927, type: 3}
+  - {fileID: 53343339370712243, guid: 99f090f4bf4dd0845bc8300ada92e657, type: 3}
   PointAPrefab: {fileID: 53343339370712243, guid: 0146ed6a551633b4d97aee04fcb7d1fb,
     type: 3}
   PointBPrefab: {fileID: 53343339370712243, guid: f5bd923f1e850d94c8aa78b05b614906,
