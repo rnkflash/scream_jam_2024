@@ -21,7 +21,6 @@ namespace _Project.Scripts.eventbus
 
 		public static void Pub(T message)
 		{
-			Debug.Log(message);
 			Handlers?.Invoke(message);
 		}
 

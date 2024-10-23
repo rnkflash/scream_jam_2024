@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3349324}
   - component: {fileID: 2337374}
   - component: {fileID: 6465228}
+  - component: {fileID: 5919301343949117980}
   m_Layer: 0
   m_Name: grass_1
   m_TagString: Untagged
@@ -106,6 +107,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300004, guid: cc22f247ae0673c4a925e4b1d1442a83, type: 3}
+--- !u!114 &5919301343949117980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56f28bd88892449ab4702f3398506034, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stiffness: 0.3
 --- !u!1 &110996
 GameObject:
   m_ObjectHideFlags: 0
@@ -203,6 +217,7 @@ GameObject:
   - component: {fileID: 3341204}
   - component: {fileID: 2383578}
   - component: {fileID: 6454952}
+  - component: {fileID: 424044591705923294}
   m_Layer: 0
   m_Name: experimental_up
   m_TagString: Untagged
@@ -297,6 +312,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300002, guid: cc22f247ae0673c4a925e4b1d1442a83, type: 3}
+--- !u!114 &424044591705923294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 126054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56f28bd88892449ab4702f3398506034, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stiffness: 1
 --- !u!1 &145148
 GameObject:
   m_ObjectHideFlags: 0

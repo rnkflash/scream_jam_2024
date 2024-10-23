@@ -37,6 +37,8 @@ namespace _Project.Scripts
 
         [SerializeField] private Transform parentForTrailers;
 
+        [SerializeField] private GameObject[] backLights;
+        
         private void Awake()
         {
             rigidBody = GetComponent<Rigidbody>();
@@ -50,7 +52,8 @@ namespace _Project.Scripts
                 InitStartingTrailer();
         }
 
-        private void FixedUpdate() {
+        private void FixedUpdate()
+        {
             HandleMotor();
             HandleSteering();
             UpdateWheels();
@@ -108,6 +111,11 @@ namespace _Project.Scripts
             trailer.ActivateHinge(trailerConnector, rigidBody);
             rigidBody.centerOfMass = centerOfMassWithTrailer;
             trailer.transform.SetParent(parentForTrailers);
+            
+            foreach (var backLight in backLights)
+            {
+                backLight.SetActive(false);
+            }
         }
 
         public void AttachDetachTrailer()
@@ -127,6 +135,11 @@ namespace _Project.Scripts
                                 this.trailer = trailer;
                                 rigidBody.centerOfMass = centerOfMassWithTrailer;
                                 trailer.transform.SetParent(parentForTrailers);
+                                
+                                foreach (var backLight in backLights)
+                                {
+                                    backLight.SetActive(false);
+                                }
                                 return true;    
                             }
                         }
@@ -155,6 +168,11 @@ namespace _Project.Scripts
                 
                 trailer = null;
                 rigidBody.centerOfMass = centerOfMassDefault;
+                
+                foreach (var backLight in backLights)
+                {
+                    backLight.SetActive(true);
+                }
             }
         }
     }

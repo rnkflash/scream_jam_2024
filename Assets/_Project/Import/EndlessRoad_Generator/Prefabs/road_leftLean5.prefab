@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 3328646}
   - component: {fileID: 2371502}
   - component: {fileID: 6477394}
+  - component: {fileID: 2986348744319032015}
   m_Layer: 0
   m_Name: grass2
   m_TagString: Untagged
@@ -191,6 +192,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: a465d2e78a2ea8d489ca8723bbb7c610, type: 3}
+--- !u!114 &2986348744319032015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 134714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56f28bd88892449ab4702f3398506034, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stiffness: 0.3
 --- !u!1 &160858
 GameObject:
   m_ObjectHideFlags: 0
@@ -203,6 +217,7 @@ GameObject:
   - component: {fileID: 3354498}
   - component: {fileID: 2359410}
   - component: {fileID: 6456338}
+  - component: {fileID: 2926581214120906620}
   m_Layer: 0
   m_Name: road_leanL
   m_TagString: Untagged
@@ -297,6 +312,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300002, guid: a465d2e78a2ea8d489ca8723bbb7c610, type: 3}
+--- !u!114 &2926581214120906620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 160858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56f28bd88892449ab4702f3398506034, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stiffness: 1
 --- !u!1 &164112
 GameObject:
   m_ObjectHideFlags: 0

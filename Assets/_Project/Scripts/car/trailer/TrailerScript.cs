@@ -17,6 +17,8 @@ namespace _Project.Scripts
         private ParkingLeg parkingLeg;
 
         private HingeJoint hingeJoint;
+
+        [SerializeField] private Light[] lights;
         
         private void CreateHingeJoint(Rigidbody connectedBody, Transform connectedAnchor)
         {
@@ -47,6 +49,11 @@ namespace _Project.Scripts
             AlignAtObject.AlignWithYourChildAt(transform, trailerConnector, truckConnector, Quaternion.identity);
             CreateHingeJoint(truckRigidbody, truckConnector);
             parkingLeg.gameObject.SetActive(false);
+            
+            foreach (var light1 in lights)
+            {
+                light1.renderMode = LightRenderMode.ForcePixel;
+            }
         }
 
         public void DeactivateHinge()
@@ -55,6 +62,11 @@ namespace _Project.Scripts
             Destroy(hingeJoint);
             hingeJoint = null;
             parkingLeg.gameObject.SetActive(true);
+            
+            foreach (var light1 in lights)
+            {
+                light1.renderMode = LightRenderMode.ForceVertex;
+            }
         }
 
         public List<Transform> GetReceiverPorts()

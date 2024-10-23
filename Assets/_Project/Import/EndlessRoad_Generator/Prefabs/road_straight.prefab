@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 3369680}
   - component: {fileID: 2365884}
   - component: {fileID: 6429316}
+  - component: {fileID: 3919894970415672414}
   m_Layer: 0
   m_Name: road_streight
   m_TagString: Untagged
@@ -137,6 +138,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300008, guid: 1b2f11f7dbee950448aedc045c33d500, type: 3}
+--- !u!114 &3919894970415672414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 139044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56f28bd88892449ab4702f3398506034, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stiffness: 1
 --- !u!1 &146334
 GameObject:
   m_ObjectHideFlags: 0
@@ -403,6 +417,7 @@ GameObject:
   - component: {fileID: 3336388}
   - component: {fileID: 2309178}
   - component: {fileID: 6418484}
+  - component: {fileID: 1171094039326490151}
   m_Layer: 0
   m_Name: grass
   m_TagString: Untagged
@@ -497,6 +512,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300004, guid: 1b2f11f7dbee950448aedc045c33d500, type: 3}
+--- !u!114 &1171094039326490151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 192084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56f28bd88892449ab4702f3398506034, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stiffness: 0.3
 --- !u!1001 &114215141821302198
 PrefabInstance:
   m_ObjectHideFlags: 0

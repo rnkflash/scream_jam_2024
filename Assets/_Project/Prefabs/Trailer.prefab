@@ -941,6 +941,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2119255228185927737}
   - component: {fileID: 8582396702284556813}
+  - component: {fileID: 1129127036488307754}
   m_Layer: 0
   m_Name: FrontWheelLeft (1)
   m_TagString: Untagged
@@ -1002,6 +1003,18 @@ WheelCollider:
   m_LayerOverridePriority: 0
   m_Enabled: 1
   m_ProvidesContacts: 0
+--- !u!114 &1129127036488307754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4434350317882888229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0ed0300e13b4c9e8797859a9a3bea3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4525433194462699492
 GameObject:
   m_ObjectHideFlags: 0
@@ -1130,6 +1143,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5010250983496830113}
   - component: {fileID: 60400330753635292}
+  - component: {fileID: 85981034121608606}
   m_Layer: 0
   m_Name: FrontWheelRight (1)
   m_TagString: Untagged
@@ -1191,6 +1205,18 @@ WheelCollider:
   m_LayerOverridePriority: 0
   m_Enabled: 1
   m_ProvidesContacts: 0
+--- !u!114 &85981034121608606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4726771972330363861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0ed0300e13b4c9e8797859a9a3bea3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4981646914221217887
 GameObject:
   m_ObjectHideFlags: 0
@@ -1201,6 +1227,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1695506937324226251}
   - component: {fileID: 228961745354052419}
+  - component: {fileID: 5835039010690251425}
   m_Layer: 0
   m_Name: FrontWheelLeft (2)
   m_TagString: Untagged
@@ -1262,6 +1289,18 @@ WheelCollider:
   m_LayerOverridePriority: 0
   m_Enabled: 1
   m_ProvidesContacts: 0
+--- !u!114 &5835039010690251425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4981646914221217887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0ed0300e13b4c9e8797859a9a3bea3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5136633053470604637
 GameObject:
   m_ObjectHideFlags: 0
@@ -1499,6 +1538,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5548079646415746392}
   - component: {fileID: 5239796474836874939}
+  - component: {fileID: 3567860680270042016}
   m_Layer: 0
   m_Name: FrontWheelRight
   m_TagString: Untagged
@@ -1560,6 +1600,18 @@ WheelCollider:
   m_LayerOverridePriority: 0
   m_Enabled: 1
   m_ProvidesContacts: 0
+--- !u!114 &3567860680270042016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7601045854049000368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0ed0300e13b4c9e8797859a9a3bea3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7700877581647413454
 GameObject:
   m_ObjectHideFlags: 0
@@ -1620,6 +1672,9 @@ MonoBehaviour:
   - {fileID: 8301726361405748155}
   Axis: {x: 0, y: 1, z: 0}
   Limits: {x: -60, y: 60}
+  lights:
+  - {fileID: 8386562312640178957}
+  - {fileID: 915651236018071676}
 --- !u!65 &3290235599859297015
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1710,6 +1765,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3645089735530856751}
   - component: {fileID: 4714862815876354538}
+  - component: {fileID: 5759258930246201031}
   m_Layer: 0
   m_Name: FrontWheelLeft
   m_TagString: Untagged
@@ -1771,6 +1827,18 @@ WheelCollider:
   m_LayerOverridePriority: 0
   m_Enabled: 1
   m_ProvidesContacts: 0
+--- !u!114 &5759258930246201031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8238299732880724208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0ed0300e13b4c9e8797859a9a3bea3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8262838732257902987
 GameObject:
   m_ObjectHideFlags: 0
@@ -1897,6 +1965,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8409311216881104390}
   - component: {fileID: 4501343739745868619}
+  - component: {fileID: 1169965665667285958}
   m_Layer: 0
   m_Name: FrontWheelRight (2)
   m_TagString: Untagged
@@ -1958,3 +2027,15 @@ WheelCollider:
   m_LayerOverridePriority: 0
   m_Enabled: 1
   m_ProvidesContacts: 0
+--- !u!114 &1169965665667285958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9059601728761358912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0ed0300e13b4c9e8797859a9a3bea3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
