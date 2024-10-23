@@ -23,7 +23,6 @@ namespace _Project.Scripts.utils
         {
             currentCamera = Camera.main;
             objectToLookAt = currentCamera?.transform;
-            Debug.Log(Camera.main);
         }
 
         private void OnAnimatorIK(int layerIndex)
