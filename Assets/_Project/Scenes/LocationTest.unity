@@ -1287,6 +1287,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7355062798170018939, guid: 871e4a80e89f1f249a23c04fa52c5b58,
+        type: 3}
+      propertyPath: afkTime
+      value: 45
+      objectReference: {fileID: 0}
     - target: {fileID: 7612128018542440422, guid: 871e4a80e89f1f249a23c04fa52c5b58,
         type: 3}
       propertyPath: m_LocalPosition.x
