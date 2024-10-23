@@ -4,8 +4,11 @@
 //
 // "Enable/Disable Headbob, Changed look rotations - should result in reduced camera jitters" || version 1.0.1
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using _Project.Scripts.eventbus;
+using _Project.Scripts.eventbus.events;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -147,6 +150,16 @@ public class FirstPersonController : MonoBehaviour
             sprintRemaining = sprintDuration;
             sprintCooldownReset = sprintCooldown;
         }
+    }
+
+    private void OnEnable()
+    {
+        EventBus<AFKTimerEvent>.Pub(new AFKTimerEvent(true));
+    }
+
+    private void OnDisable()
+    {
+        EventBus<AFKTimerEvent>.Pub(new AFKTimerEvent(false));
     }
 
     void Start()

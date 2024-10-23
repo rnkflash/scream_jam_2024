@@ -1320,36 +1320,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8997468776458048774, guid: 871e4a80e89f1f249a23c04fa52c5b58,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 21.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8997468776458048774, guid: 871e4a80e89f1f249a23c04fa52c5b58,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 101.16
-      objectReference: {fileID: 0}
-    - target: {fileID: 8997468776458048774, guid: 871e4a80e89f1f249a23c04fa52c5b58,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: -0.5404631
-      objectReference: {fileID: 0}
-    - target: {fileID: 8997468776458048774, guid: 871e4a80e89f1f249a23c04fa52c5b58,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.8413678
-      objectReference: {fileID: 0}
-    - target: {fileID: 8997468776458048774, guid: 871e4a80e89f1f249a23c04fa52c5b58,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 245.43
-      objectReference: {fileID: 0}
-    - target: {fileID: 9086317836598087335, guid: 871e4a80e89f1f249a23c04fa52c5b58,
-        type: 3}
-      propertyPath: useSprintBar
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

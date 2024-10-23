@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using _Project.Scripts.eventbus;
 using _Project.Scripts.eventbus.events;
@@ -44,6 +45,19 @@ namespace _Project.Scripts.monster
             huntingSphere = GetComponent<SphereCollider>();
             model.SetActive(false);
             audioSource = GetComponent<AudioSource>();
+            
+            EventBus<AFKGhoulStopHunting>.Sub(OnMessage);
+        }
+
+        private void OnDestroy()
+        {
+            EventBus<AFKGhoulStopHunting>.Unsub(OnMessage);
+        }
+
+        private void OnMessage(AFKGhoulStopHunting message)
+        {
+            finishHunting = true;
+            Disappear();
         }
 
         [Button]
