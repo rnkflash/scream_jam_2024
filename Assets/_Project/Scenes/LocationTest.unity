@@ -1097,6 +1097,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79e9bb2e295278c45ab56c7aaeb0f386, type: 3}
+--- !u!114 &1554737246 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5321082737724417900, guid: 79e9bb2e295278c45ab56c7aaeb0f386,
+    type: 3}
+  m_PrefabInstance: {fileID: 1554737245}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88c65d327b387ff41ac19c467a6682e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1936050294
 GameObject:
   m_ObjectHideFlags: 0
@@ -1265,10 +1277,20 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2307363001476589264, guid: 871e4a80e89f1f249a23c04fa52c5b58,
+        type: 3}
+      propertyPath: trailer
+      value: 
+      objectReference: {fileID: 1554737246}
     - target: {fileID: 7278054527917284478, guid: 871e4a80e89f1f249a23c04fa52c5b58,
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7355062798170018939, guid: 871e4a80e89f1f249a23c04fa52c5b58,
+        type: 3}
+      propertyPath: afkTime
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 7612128018542440422, guid: 871e4a80e89f1f249a23c04fa52c5b58,
         type: 3}
