@@ -51,16 +51,16 @@ namespace _Project.Scripts.car.interactables
             if (PlayerGlobal.Instance.money <= 0)
             {
                 DialogSystem.Instance.Say(
-                    new DialogData("Деняк у меня нифига нет", itemName),
-                    new DialogData("а должен я им около " + PlayerGlobal.Instance.goalMoney + "$."),
-                    new DialogData("Эх.....")
+                    new DialogData("I don't have any cash at all.", itemName),
+                    new DialogData("But I owe them around... " + PlayerGlobal.Instance.goalMoney + "$."),
+                    new DialogData("EH.....")
                 );
             }
             else
             {
                 DialogSystem.Instance.Say(
-                    new DialogData("Деняк у меня всего " + PlayerGlobal.Instance.money + " $", itemName),
-                    new DialogData("а должен я им еще " + (PlayerGlobal.Instance.goalMoney - PlayerGlobal.Instance.money) + "$.")
+                    new DialogData("I only have a " + PlayerGlobal.Instance.money + " $", itemName),
+                    new DialogData("But I still owe them some more " + (PlayerGlobal.Instance.goalMoney - PlayerGlobal.Instance.money) + "$.")
                 );
             }
             
