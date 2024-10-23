@@ -21,7 +21,7 @@ namespace _Project.Scripts.jumpscares
 
 
         [Button]
-        public void Scare()
+        public void Scare(Action callback)
         {
             if (isScaring) return;
             isScaring = true;
@@ -35,6 +35,7 @@ namespace _Project.Scripts.jumpscares
                 model.SetActive(false);
                 camera.transform.position = initialPos;
                 camera.transform.rotation = initialRot;
+                callback?.Invoke();
             });
         }
 
