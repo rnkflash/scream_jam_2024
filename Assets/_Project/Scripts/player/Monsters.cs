@@ -16,7 +16,7 @@ namespace _Project.Scripts.player
 
         private void OnAFKGhoulStartHunting(AFKGhoulStartHunting message)
         {
-            afkGhoul.StartHunting(message.plane);
+            afkGhoul.StartHunting(message.plane, 30.0f);
         }
 
         private void OnDestroy()
