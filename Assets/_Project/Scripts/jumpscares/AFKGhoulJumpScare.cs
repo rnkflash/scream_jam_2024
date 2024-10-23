@@ -29,7 +29,7 @@ namespace _Project.Scripts.jumpscares
             var initialRot = camera.transform.rotation;
             model.SetActive(true);
             PlayerGlobal.Instance.PlaySound(scareSound);
-            camera.DOShakePosition(1.0f).OnComplete(() =>
+            camera.DOShakePosition(1.25f).OnComplete(() =>
             {
                 isScaring = false;
                 model.SetActive(false);

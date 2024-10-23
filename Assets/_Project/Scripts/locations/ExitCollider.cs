@@ -1,5 +1,4 @@
 using System;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace _Project.Scripts.locations
@@ -21,7 +20,7 @@ namespace _Project.Scripts.locations
         private void OnTriggerEnter(Collider other)
         {
             if (isTriggered) return;
-            var car = other.GameObject().GetComponent<CarController>();
+            var car = other.transform.gameObject.GetComponent<CarController>();
             if (car != null)
             {
                 isTriggered = true;
