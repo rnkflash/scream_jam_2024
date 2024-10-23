@@ -6289,6 +6289,8 @@ MonoBehaviour:
   trailerDetectorRadius: 0.7
   trailer: {fileID: 0}
   parentForTrailers: {fileID: 860927287561016393}
+  backLights:
+  - {fileID: 7738189883903186226}
 --- !u!65 &8044444735687589289
 BoxCollider:
   m_ObjectHideFlags: 0
