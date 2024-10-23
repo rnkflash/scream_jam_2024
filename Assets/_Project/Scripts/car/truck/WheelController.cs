@@ -38,13 +38,19 @@ namespace _Project.Scripts.car.truck
                         {
                             if (!stiffnessAdjusted)
                             {
-                                var forwardFriction = wheelCollider.forwardFriction;
-                                forwardFriction.stiffness = roadTerrain.stiffness;
-                                wheelCollider.forwardFriction = forwardFriction;
+                                if (!Mathf.Approximately(wheelCollider.forwardFriction.stiffness, roadTerrain.stiffness))
+                                {
+                                    var forwardFriction = wheelCollider.forwardFriction;
+                                    forwardFriction.stiffness = roadTerrain.stiffness;
+                                    wheelCollider.forwardFriction = forwardFriction;
+                                }
 
-                                var sidewaysFriction = wheelCollider.sidewaysFriction;
-                                sidewaysFriction.stiffness = roadTerrain.stiffness;
-                                wheelCollider.sidewaysFriction = sidewaysFriction;
+                                if (!Mathf.Approximately(wheelCollider.sidewaysFriction.stiffness, roadTerrain.stiffness))
+                                {
+                                    var sidewaysFriction = wheelCollider.sidewaysFriction;
+                                    sidewaysFriction.stiffness = roadTerrain.stiffness;
+                                    wheelCollider.sidewaysFriction = sidewaysFriction;
+                                }
                                 
                                 stiffnessAdjusted = true;    
                             }
@@ -54,6 +60,20 @@ namespace _Project.Scripts.car.truck
                         return false;
                     }
                 );
+
+                if (!stiffnessAdjusted)
+                {
+                    if (!Mathf.Approximately(wheelCollider.sidewaysFriction.stiffness, 1.0f))
+                    {
+                        var forwardFriction = wheelCollider.forwardFriction;
+                        forwardFriction.stiffness = 1.0f;
+                        wheelCollider.forwardFriction = forwardFriction;
+
+                        var sidewaysFriction = wheelCollider.sidewaysFriction;
+                        sidewaysFriction.stiffness = 1.0f;
+                        wheelCollider.sidewaysFriction = sidewaysFriction;
+                    }
+                }
             }
         }
     }
