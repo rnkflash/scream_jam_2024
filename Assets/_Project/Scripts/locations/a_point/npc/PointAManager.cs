@@ -22,23 +22,23 @@ namespace _Project.Scripts.locations.a_point.npc
             switch (cargoReceiver.state)
             {
                 case CargoReceiver.ReceiverState.Empty:
-                    DialogSystem.Instance.Say("Отцепи прицеп на стоянке слева от меня и получи бабки.");
+                    DialogSystem.Instance.Say("Detach the trailer at the parking lot to my left and get the cash.");
                     break;
                 case CargoReceiver.ReceiverState.TrailerInside:
 
                     switch (cargoReceiver.parkingState)
                     {
                         case CargoReceiver.ParkingState.NotParked:
-                            DialogSystem.Instance.Say("Ну чего ты ждешь, паркуйся блять.");
+                            DialogSystem.Instance.Say("What are you waiting for? Park the damn thing.");
                             break;
                         case CargoReceiver.ParkingState.PartlyOccupied:
                             DialogSystem.Instance.Say(
-                                "ЕКЛМН! Кто так паркуется блять",
-                                "Прицеп должен стоят пправильно"
+                                "Who parks like that, damn it?",
+                                "The trailer's got to be parked properly."
                                 );
                             break;
                         case CargoReceiver.ParkingState.FullyOccupied:
-                            DialogSystem.Instance.Say("Намана! А теперь отцепи груз");
+                            DialogSystem.Instance.Say("Got it! Now detach the load.");
                             break;
                         default:
                             throw new ArgumentOutOfRangeException();
@@ -49,14 +49,14 @@ namespace _Project.Scripts.locations.a_point.npc
                     if (!babkiVidal)
                     {
                         DialogSystem.Instance.Say(
-                            new DialogData("Молодец! вот твои бабки", npcName, GiveBabki),
-                            new DialogData("А теперь едь на другую базу за новым грузом!", npcName)
+                            new DialogData("Good job! Here’s your cash.", npcName, GiveBabki),
+                            new DialogData("Now head to the other depot for a new load!", npcName)
                         );    
                     }
                     else
                     {
                         DialogSystem.Instance.Say(
-                            new DialogData("А теперь пиздуй на другую базу за новым грузом!", npcName)
+                            new DialogData("Now get your ass to the other depot for a new load!", npcName)
                         );
                     }
                     
