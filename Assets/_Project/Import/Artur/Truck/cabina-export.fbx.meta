@@ -7,6 +7,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: 8f84be1a9d7016246a9ec16e99770ed5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: hoxsvl_wheel_v1_mat
     second: {fileID: 2100000, guid: a3f6894e4c4d80245876552825f3d877, type: 2}
   - first:
