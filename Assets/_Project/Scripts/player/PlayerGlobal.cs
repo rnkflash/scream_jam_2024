@@ -29,6 +29,11 @@ namespace _Project.Scripts.player
             EventBus<MissionUpdate>.Sub(OnMissionUpdate);
         }
 
+        public void PlaySound(AudioClip clip)
+        {
+            audioSource.PlayOneShot(clip);
+        }
+
         protected virtual void OnDestroy()
         {
             EventBus<AddMoney>.Unsub(OnAddMoney);
