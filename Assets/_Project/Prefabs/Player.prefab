@@ -8918,7 +8918,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea7faf7774224a10a9c2c6dba382692e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  afkTime: 30
+  afkTime: 45
   huntingGround: {fileID: 5262195366043353008}
 --- !u!1 &8022830342141758719
 GameObject:

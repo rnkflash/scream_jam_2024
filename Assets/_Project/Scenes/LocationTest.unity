@@ -436,8 +436,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: press E to enter
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ccd1aeab2f161b148b2bbb868190eb13, type: 2}
+  m_sharedMaterial: {fileID: 2202960031348424367, guid: ccd1aeab2f161b148b2bbb868190eb13,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -650,8 +651,9 @@ MonoBehaviour:
   m_text: WASD - move, Space - Brakes, E - use, C - camera switch in car, ESC - switch
     windows/fullscr, R - restart
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ccd1aeab2f161b148b2bbb868190eb13, type: 2}
+  m_sharedMaterial: {fileID: 2202960031348424367, guid: ccd1aeab2f161b148b2bbb868190eb13,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -675,12 +677,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 13.1
+  m_fontSize: 18.21
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 4.2
-  m_fontSizeMax: 13.1
+  m_fontSizeMax: 18.21
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 1024
@@ -746,8 +748,14 @@ PrefabInstance:
     - target: {fileID: 4094011681938070648, guid: d536fa71dd00cf349a228e41212ace48,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 10.000244
+      value: 10.000366
       objectReference: {fileID: 0}
+    - target: {fileID: 4094011683009168357, guid: d536fa71dd00cf349a228e41212ace48,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: afa5fc1918d12484b98a012e9ac09a60,
+        type: 3}
     - target: {fileID: 4094011683009168357, guid: d536fa71dd00cf349a228e41212ace48,
         type: 3}
       propertyPath: m_FontData.m_Alignment
@@ -863,6 +871,12 @@ PrefabInstance:
       propertyPath: m_BlockingMask.m_Bits
       value: 247
       objectReference: {fileID: 0}
+    - target: {fileID: 6286582588928056812, guid: d536fa71dd00cf349a228e41212ace48,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: afa5fc1918d12484b98a012e9ac09a60,
+        type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1286,11 +1300,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 7355062798170018939, guid: 871e4a80e89f1f249a23c04fa52c5b58,
-        type: 3}
-      propertyPath: afkTime
-      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 7612128018542440422, guid: 871e4a80e89f1f249a23c04fa52c5b58,
         type: 3}
