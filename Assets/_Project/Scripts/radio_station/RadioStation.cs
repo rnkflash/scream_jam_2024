@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using _Project.Scripts.scriptables;
 using _Project.Scripts.utils;
 using UnityEngine;
@@ -49,6 +50,9 @@ namespace _Project.Scripts.radio_station
             yield return new WaitForSeconds(radioNoiseSound.length);
             audioSource1.clip = radioTracks.audioClips[currentStation];;
             audioSource1.loop = true;
+            Debug.Log("realtimeSinceStartup: " + Time.realtimeSinceStartup);
+            audioSource1.time = Time.realtimeSinceStartup - audioSource1.clip.length * Mathf.Floor(Time.realtimeSinceStartup / audioSource1.clip.length);
+            Debug.Log("audioSource1.time: " + audioSource1.time);
             audioSource1.Play();
         }
 
