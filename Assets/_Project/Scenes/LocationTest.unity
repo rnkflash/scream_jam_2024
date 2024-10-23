@@ -1282,6 +1282,17 @@ PrefabInstance:
       propertyPath: trailer
       value: 
       objectReference: {fileID: 1554737246}
+    - target: {fileID: 4325039683093118194, guid: 871e4a80e89f1f249a23c04fa52c5b58,
+        type: 3}
+      propertyPath: locationPrefabs.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4325039683093118194, guid: 871e4a80e89f1f249a23c04fa52c5b58,
+        type: 3}
+      propertyPath: locationPrefabs.Array.data[3]
+      value: 
+      objectReference: {fileID: 53343339370712243, guid: 7c84ad84b795da549a8506541ce67927,
+        type: 3}
     - target: {fileID: 7278054527917284478, guid: 871e4a80e89f1f249a23c04fa52c5b58,
         type: 3}
       propertyPath: m_Name
