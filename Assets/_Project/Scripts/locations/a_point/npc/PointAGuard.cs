@@ -19,7 +19,12 @@ namespace _Project.Scripts.locations.a_point.npc
         
         public void Interact()
         {
-            DialogSystem.Instance.Say("Ah, there you are. Just got here? Alright, head right, go to the end. The manager’s there. He’ll fill you in. And hurry — everyone's tense from the delays.");
+            DialogSystem.Instance.Say(
+                "Ah, there you are.",
+                "Just got here?",
+                "Alright, head right, go to the end. The manager’s there. He’ll fill you in. ",
+                "And hurry — everyone's tense from the delays."
+                );
         }
         
 
