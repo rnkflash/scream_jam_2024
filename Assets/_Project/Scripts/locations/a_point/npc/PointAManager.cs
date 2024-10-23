@@ -49,13 +49,13 @@ namespace _Project.Scripts.locations.a_point.npc
                     {
                         DialogSystem.Instance.Say(
                             new DialogData("Молодец! вот твои бабки", npcName, GiveBabki),
-                            new DialogData("А теперь ед на другую базу за новым грузом!", npcName)
+                            new DialogData("А теперь едь на другую базу за новым грузом!", npcName)
                         );    
                     }
                     else
                     {
                         DialogSystem.Instance.Say(
-                            new DialogData("А теперь ед на другую базу за новым грузом!", npcName)
+                            new DialogData("А теперь пиздуй на другую базу за новым грузом!", npcName)
                         );
                     }
                     

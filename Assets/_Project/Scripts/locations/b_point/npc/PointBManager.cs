@@ -11,7 +11,7 @@ namespace _Project.Scripts.locations.b_point.npc
         
         public void Interact()
         {
-            DialogSystem.Instance.Say("Забирай любой прицеп и доставь до следующей базы, получишь деняк.");
+            DialogSystem.Instance.Say("Забирай любой прицеп и доставь до следующей базы, получишь многа деняк.");
         }
         
         public string GetName()
