@@ -22,6 +22,6 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   audioClips:
-  - {fileID: 8300000, guid: ffab7593e8289cd4a800a6afaef16785, type: 3}
-  - {fileID: 8300000, guid: 1fda2eb874150e94589a9e03e80a0181, type: 3}
+  - {fileID: 8300000, guid: 798f53cc1f6df2045a6295470f79a7e5, type: 3}
+  - {fileID: 8300000, guid: bfa6ffe3ac190874f9473603c442ec09, type: 3}
   - {fileID: 8300000, guid: 9e4d7638e92009e4c8c80012c519586f, type: 3}

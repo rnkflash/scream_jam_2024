@@ -11,7 +11,7 @@ namespace _Project.Scripts.locations.b_point.npc
         
         public void Interact()
         {
-            DialogSystem.Instance.Say("Забирай любой прицеп и доставь до следующей базы, получишь многа деняк.");
+            DialogSystem.Instance.Say("Grab any trailer and deliver it to the next depot; you’ll get a lot of cash.");
         }
         
         public string GetName()
