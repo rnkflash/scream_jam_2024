@@ -21,11 +21,9 @@ namespace _Project.Scripts.utils
 
         private void Update()
         {
-            if (currentCamera != Camera.main)
-            {
-                currentCamera = Camera.main;
-                objectToLookAt = currentCamera?.transform;
-            }
+            currentCamera = Camera.main;
+            objectToLookAt = currentCamera?.transform;
+            Debug.Log(Camera.main);
         }
 
         private void OnAnimatorIK(int layerIndex)
