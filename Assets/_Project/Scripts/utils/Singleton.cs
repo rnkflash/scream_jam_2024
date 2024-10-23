@@ -35,7 +35,7 @@ namespace _Project.Scripts.utils
                             m_Instance = singletonObject.AddComponent<T>();
                             singletonObject.name = typeof(T).ToString() + " (Singleton)";
                             // Make instance persistent.
-                            DontDestroyOnLoad(singletonObject);
+                            //DontDestroyOnLoad(singletonObject);
                         }
                     }
                     return m_Instance;
