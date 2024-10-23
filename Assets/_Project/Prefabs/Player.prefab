@@ -5630,6 +5630,7 @@ GameObject:
   - component: {fileID: 7612128018542440422}
   - component: {fileID: 5901060414228545969}
   - component: {fileID: 7416162151047265008}
+  - component: {fileID: 4325039683093118194}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -5672,6 +5673,7 @@ MonoBehaviour:
   goalMoney: 60000
   oneMissionMoney: 10000
   money: 0
+  isOnMission: 0
   moneyKaChing: {fileID: 8300000, guid: 6711adbedb806ee49bd0042a13015324, type: 3}
 --- !u!82 &7416162151047265008
 AudioSource:
@@ -5769,6 +5771,26 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4325039683093118194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7278054527917284478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1f21f0182e34332a7f6e24a876885d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  locationPrefabs:
+  - {fileID: 53343339370712243, guid: c7e1a9590a911e54ca97a0b583947edb, type: 3}
+  - {fileID: 53343339370712243, guid: 55bbf6b009f11ee4396c0cb7521a39a3, type: 3}
+  - {fileID: 53343339370712243, guid: 1c1ddbb2fa7de6c4c8bb926f9749cd04, type: 3}
+  PointAPrefab: {fileID: 53343339370712243, guid: 0146ed6a551633b4d97aee04fcb7d1fb,
+    type: 3}
+  PointBPrefab: {fileID: 53343339370712243, guid: f5bd923f1e850d94c8aa78b05b614906,
+    type: 3}
 --- !u!1 &7333754553057257628
 GameObject:
   m_ObjectHideFlags: 0

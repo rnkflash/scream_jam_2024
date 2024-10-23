@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using _Project.Scripts.eventbus;
+using _Project.Scripts.eventbus.events;
 using _Project.Scripts.locations;
 using Sirenix.OdinInspector;
 using Sirenix.Utilities;
@@ -116,6 +118,8 @@ namespace _Project.Scripts
             {
                 backLight.SetActive(false);
             }
+            
+            EventBus<MissionUpdate>.Pub(new MissionUpdate(true));
         }
 
         public void AttachDetachTrailer()
@@ -140,6 +144,8 @@ namespace _Project.Scripts
                                 {
                                     backLight.SetActive(false);
                                 }
+                                
+                                EventBus<MissionUpdate>.Pub(new MissionUpdate(true));
                                 return true;    
                             }
                         }
@@ -173,6 +179,8 @@ namespace _Project.Scripts
                 {
                     backLight.SetActive(true);
                 }
+                
+                EventBus<MissionUpdate>.Pub(new MissionUpdate(false));
             }
         }
     }

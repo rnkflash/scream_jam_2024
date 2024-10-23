@@ -1,5 +1,8 @@
-﻿using _Project.Scripts.eventbus;
+﻿using System;
+using System.Collections.Generic;
+using _Project.Scripts.eventbus;
 using _Project.Scripts.eventbus.events;
+using _Project.Scripts.locations;
 using _Project.Scripts.scriptables;
 using UnityEngine;
 
@@ -13,20 +16,28 @@ namespace _Project.Scripts.player
 
         public int money = 0;
 
+        public bool isOnMission;
+        
         private AudioSource audioSource;
         [SerializeField] private AudioClip moneyKaChing;
-        
 
-        private void Start()
+        private void Awake()
         {
             money = startingMoney;
-            EventBus<AddMoney>.Sub(OnAddMoney);
             audioSource = GetComponent<AudioSource>();
+            EventBus<AddMoney>.Sub(OnAddMoney);
+            EventBus<MissionUpdate>.Sub(OnMissionUpdate);
         }
 
         protected virtual void OnDestroy()
         {
             EventBus<AddMoney>.Unsub(OnAddMoney);
+            EventBus<MissionUpdate>.Unsub(OnMissionUpdate);
+        }
+
+        private void OnMissionUpdate(MissionUpdate message)
+        {
+            isOnMission = message.trailerAttached;
         }
 
         private void OnAddMoney(AddMoney message)

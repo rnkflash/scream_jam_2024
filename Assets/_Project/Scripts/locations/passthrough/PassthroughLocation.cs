@@ -2,9 +2,9 @@
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace _Project.Scripts.locations.a_point
+namespace _Project.Scripts.locations.passthrough
 {
-    public class PointALocation : Location
+    public class PassthroughLocation : Location
     {
         [SerializeField] private Transform exit1;
         
@@ -24,8 +24,10 @@ namespace _Project.Scripts.locations.a_point
 
         public override void OnExit(string exitName)
         {
-            var prefab = LocationRandomizator.Instance.GetNextRandomLocationPrefab(this);
-            LocationManager.Instance.LoadLocation(prefab, generatedRoadExit);
+            LocationManager.Instance.LoadLocation(
+                LocationRandomizator.Instance.GetNextRandomLocationPrefab(this), 
+                generatedRoadExit
+            );
         }
     }
 }

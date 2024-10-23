@@ -1,4 +1,5 @@
-﻿using Sirenix.OdinInspector;
+﻿using _Project.Scripts.player;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace _Project.Scripts.locations.b_point
@@ -6,7 +7,6 @@ namespace _Project.Scripts.locations.b_point
     public class PointBLocation : Location
     {
         [SerializeField] private Transform exit1;
-        [SerializeField] private GameObject nextLocationPrefab;
         
         private Transform generatedRoadExit;
 
@@ -24,7 +24,10 @@ namespace _Project.Scripts.locations.b_point
 
         public override void OnExit(string exitName)
         {
-            LocationManager.Instance.LoadLocation(nextLocationPrefab, generatedRoadExit);
+            LocationManager.Instance.LoadLocation(
+                LocationRandomizator.Instance.GetNextRandomLocationPrefab(this), 
+                generatedRoadExit
+            );
         }
     }
 }

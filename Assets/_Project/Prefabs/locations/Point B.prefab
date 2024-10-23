@@ -279,8 +279,7 @@ MonoBehaviour:
   start: {fileID: 5547130684413557643}
   roadGenerator: {fileID: 4535978194716732048}
   exit1: {fileID: 2292114988829128161}
-  nextLocationPrefab: {fileID: 53343339370712243, guid: 0146ed6a551633b4d97aee04fcb7d1fb,
-    type: 3}
+  nextLocationPrefab: {fileID: 0}
 --- !u!1 &198071365966011298
 GameObject:
   m_ObjectHideFlags: 0
