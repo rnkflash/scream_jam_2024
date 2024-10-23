@@ -647,8 +647,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: WASDSpaceCtrl - move, E - use, C - camera switch in car, L - scene light,
-    ESC - switch windows/fullscr, R - restart
+  m_text: WASD - move, Space - Brakes, E - use, C - camera switch in car, ESC - switch
+    windows/fullscr, R - restart
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1040,7 +1040,7 @@ PrefabInstance:
     - target: {fileID: 6732306456434416287, guid: 79e9bb2e295278c45ab56c7aaeb0f386,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -94.100006
+      value: -89.9
       objectReference: {fileID: 0}
     - target: {fileID: 6732306456434416287, guid: 79e9bb2e295278c45ab56c7aaeb0f386,
         type: 3}
@@ -1050,7 +1050,7 @@ PrefabInstance:
     - target: {fileID: 6732306456434416287, guid: 79e9bb2e295278c45ab56c7aaeb0f386,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 72.71
+      value: 68.5
       objectReference: {fileID: 0}
     - target: {fileID: 6732306456434416287, guid: 79e9bb2e295278c45ab56c7aaeb0f386,
         type: 3}
