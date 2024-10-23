@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using _Project.Scripts.eventbus;
 using _Project.Scripts.eventbus.events;
+using _Project.Scripts.jumpscares;
 using _Project.Scripts.locations;
 using _Project.Scripts.scriptables;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace _Project.Scripts.player
 {
@@ -20,6 +22,7 @@ namespace _Project.Scripts.player
         
         private AudioSource audioSource;
         [SerializeField] private AudioClip moneyKaChing;
+        [SerializeField] private AFKGhoulJumpScare afkGhoulJumpScare;
 
         private void Awake()
         {
@@ -27,6 +30,17 @@ namespace _Project.Scripts.player
             audioSource = GetComponent<AudioSource>();
             EventBus<AddMoney>.Sub(OnAddMoney);
             EventBus<MissionUpdate>.Sub(OnMissionUpdate);
+            EventBus<JumpScareEvent>.Sub(OnJumpScare);
+            
+        }
+
+        private void OnJumpScare(JumpScareEvent message)
+        {
+            afkGhoulJumpScare.Scare(() =>
+            {
+                Debug.Log("you are dead lol");
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            });
         }
 
         public void PlaySound(AudioClip clip)
@@ -38,6 +52,7 @@ namespace _Project.Scripts.player
         {
             EventBus<AddMoney>.Unsub(OnAddMoney);
             EventBus<MissionUpdate>.Unsub(OnMissionUpdate);
+            EventBus<JumpScareEvent>.Unsub(OnJumpScare);
         }
 
         private void OnMissionUpdate(MissionUpdate message)
@@ -51,6 +66,11 @@ namespace _Project.Scripts.player
             EventBus<MoneyRefreshed>.Pub(new MoneyRefreshed(money));
             
             audioSource.PlayOneShot(moneyKaChing);
+        }
+
+        public AFKGhoulJumpScare GetJumpScare()
+        {
+            return afkGhoulJumpScare;
         }
     }
 }
