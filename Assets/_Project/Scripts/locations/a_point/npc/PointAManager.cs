@@ -3,6 +3,7 @@ using _Project.Scripts.dialog;
 using _Project.Scripts.eventbus;
 using _Project.Scripts.eventbus.events;
 using _Project.Scripts.interaction;
+using _Project.Scripts.player;
 using Doublsb.Dialog;
 using UnityEngine;
 
@@ -67,7 +68,7 @@ namespace _Project.Scripts.locations.a_point.npc
         
         private void GiveBabki()
         {
-            EventBus<AddMoney>.Pub(new AddMoney(100));
+            EventBus<AddMoney>.Pub(new AddMoney(PlayerGlobal.Instance.oneMissionMoney));
             babkiVidal = true;
         }
 
