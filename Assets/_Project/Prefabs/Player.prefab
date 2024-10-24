@@ -9314,8 +9314,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.2139544, y: 0.4949746, z: 6.82}
-  m_Center: {x: 0.004683733, y: 0.623955, z: -0.86}
+  m_Size: {x: 2.2139544, y: 0.4949746, z: 5.442045}
+  m_Center: {x: 0.004683733, y: 0.623955, z: 0.010287762}
 --- !u!65 &3374983369701144786
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9949,7 +9949,7 @@ MonoBehaviour:
   huntingTimeMax: 10
   huntingTimeMin: 1
   model: {fileID: 4529175731939719952}
-  huntingRoar: {fileID: 8300000, guid: 9e6882d349c3f0c4b9228d7dae287002, type: 3}
+  huntingRoar: {fileID: 8300000, guid: 253c3db0cb59d4441959de4305ce2eb8, type: 3}
   lifeTime: 30
 --- !u!82 &8210490742410213942
 AudioSource:
