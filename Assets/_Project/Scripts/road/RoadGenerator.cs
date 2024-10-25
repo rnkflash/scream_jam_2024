@@ -64,8 +64,14 @@ namespace _Project.Scripts.road
                     GameObjectPool.Instance.ReturnObject(pair.Key, obj);
                 }
             }
+            objects.Clear();
         }
-            
+
+        private void OnDestroy()
+        {
+            Unload();
+        }
+
         private GameObject CreateObjectFromPrefab(
             GameObject prefab,
             Vector3 position,

@@ -16,6 +16,8 @@ namespace _Project.Scripts.car.interactables
         [SerializeField] private GameObject[] moneyKu4ka;
         [SerializeField] private int eachMoneyKu4kaAmount = 10000;
 
+        [SerializeField] private GameObject winPic;
+        
         private void Start()
         {
             EventBus<MoneyRefreshed>.Sub(OnMoneyRefreshed);
@@ -57,13 +59,31 @@ namespace _Project.Scripts.car.interactables
                 );
             }
             else
+            if (PlayerGlobal.Instance.money < PlayerGlobal.Instance.goalMoney)
             {
                 DialogSystem.Instance.Say(
                     new DialogData("I only have a " + PlayerGlobal.Instance.money + " $", itemName),
                     new DialogData("But I still owe them some more " + (PlayerGlobal.Instance.goalMoney - PlayerGlobal.Instance.money) + "$.")
                 );
             }
+            else
+            {
+                DialogSystem.Instance.Say(
+                    new DialogData("Congratulations! You win, sadly there is no win condition in this game :(", itemName, ShowWinPicture),
+                    new DialogData("Here! Take a look at a picture of your daughter waiting you at home.", itemName, HideWinPicture)
+                );
+            }
             
+        }
+
+        private void ShowWinPicture()
+        {
+            winPic.SetActive(true);
+        }
+        
+        private void HideWinPicture()
+        {
+            winPic.SetActive(false);
         }
 
         public string GetName()

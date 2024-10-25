@@ -1459,7 +1459,7 @@ MonoBehaviour:
   cameraCanMove: 1
   mouseSensitivity: 2
   maxLookAngle: 50
-  lockCursor: 0
+  lockCursor: 1
   crosshair: 1
   crosshairImage: {fileID: 21300000, guid: be4ce60e2c9768c44b9b10b9c5258045, type: 3}
   crosshairColor: {r: 1, g: 1, b: 1, a: 1}
@@ -1491,6 +1491,7 @@ MonoBehaviour:
   enableCrouch: 1
   holdToCrouch: 0
   crouchKey: 306
+  crouchKey2: 99
   crouchHeight: 0.75
   speedReduction: 0.5
   enableHeadBob: 1
@@ -4355,6 +4356,53 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8528232475867555178}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4206406362373398505
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1240306204982475875}
+  - component: {fileID: 3722250867414142010}
+  m_Layer: 0
+  m_Name: ObjectPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1240306204982475875
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4206406362373398505}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7612128018542440422}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3722250867414142010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4206406362373398505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a2c00357ba04485a63a481ba67e9ee2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collectionCheck: 1
+  defaultCapacity: 100
+  maxPoolSize: 100
 --- !u!1 &4251918721767526013
 GameObject:
   m_ObjectHideFlags: 0
@@ -6068,6 +6116,7 @@ MonoBehaviour:
   - {fileID: 108623548479244294}
   - {fileID: 7630878105169366232}
   eachMoneyKu4kaAmount: 10000
+  winPic: {fileID: 0}
 --- !u!65 &2828194357827759927
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7552,7 +7601,6 @@ GameObject:
   - component: {fileID: 5901060414228545969}
   - component: {fileID: 7416162151047265008}
   - component: {fileID: 4325039683093118194}
-  - component: {fileID: 5413317600951007866}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -7579,6 +7627,7 @@ Transform:
   - {fileID: 6684467214501112953}
   - {fileID: 982961727441570950}
   - {fileID: 2709721145169239910}
+  - {fileID: 1240306204982475875}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5901060414228545969
@@ -7722,21 +7771,6 @@ MonoBehaviour:
     type: 3}
   PointBPrefab: {fileID: 53343339370712243, guid: f5bd923f1e850d94c8aa78b05b614906,
     type: 3}
---- !u!114 &5413317600951007866
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7278054527917284478}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a2c00357ba04485a63a481ba67e9ee2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  collectionCheck: 1
-  defaultCapacity: 10
-  maxPoolSize: 20
 --- !u!1 &7302916880856322524
 GameObject:
   m_ObjectHideFlags: 0
@@ -9967,7 +10001,8 @@ MonoBehaviour:
   huntingTimeMin: 1
   model: {fileID: 4529175731939719952}
   huntingRoar: {fileID: 8300000, guid: 9e6882d349c3f0c4b9228d7dae287002, type: 3}
-  lifeTime: 30
+  lifeTimeMin: 30
+  lifeTimeMax: 60
 --- !u!82 &8210490742410213942
 AudioSource:
   m_ObjectHideFlags: 0

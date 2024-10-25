@@ -26,7 +26,8 @@ namespace _Project.Scripts.monster
 
         [SerializeField] private AudioClip huntingRoar;
         
-        [SerializeField] private float lifeTime = 30.0f;
+        [SerializeField] private float lifeTimeMin = 30.0f;
+        [SerializeField] private float lifeTimeMax = 60.0f;
         private AudioSource audioSource;
 
         private bool isTriggered;
@@ -61,7 +62,7 @@ namespace _Project.Scripts.monster
         }
 
         [Button]
-        public void StartHunting(GameObject huntingGround, float huntingTime)
+        public void StartHunting(GameObject huntingGround)
         {
             if (state != State.INACTIVE) return;
             StopAllCoroutines();
@@ -73,7 +74,7 @@ namespace _Project.Scripts.monster
             timer = Random.Range(appearTimeMin, appearTimeMax);
             huntingSphere.radius = 1.0f;
 
-            StartCoroutine(DisappearTimer(huntingTime));
+            StartCoroutine(DisappearTimer(Random.Range(lifeTimeMin, lifeTimeMax)));
         }
         
         private void ContinueHunting()

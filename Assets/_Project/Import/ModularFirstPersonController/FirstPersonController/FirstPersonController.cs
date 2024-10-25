@@ -111,6 +111,7 @@ public class FirstPersonController : MonoBehaviour
     public bool enableCrouch = true;
     public bool holdToCrouch = true;
     public KeyCode crouchKey = KeyCode.LeftControl;
+    public KeyCode crouchKey2 = KeyCode.C;
     public float crouchHeight = .75f;
     public float speedReduction = .5f;
 
@@ -350,17 +351,17 @@ public class FirstPersonController : MonoBehaviour
 
         if (enableCrouch)
         {
-            if(Input.GetKeyDown(crouchKey) && !holdToCrouch)
+            if((Input.GetKeyDown(crouchKey) || Input.GetKeyDown(crouchKey2)) && !holdToCrouch)
             {
                 Crouch();
             }
             
-            if(Input.GetKeyDown(crouchKey) && holdToCrouch)
+            if((Input.GetKeyDown(crouchKey) || Input.GetKeyDown(crouchKey2)) && holdToCrouch)
             {
                 isCrouched = false;
                 Crouch();
             }
-            else if(Input.GetKeyUp(crouchKey) && holdToCrouch)
+            else if((Input.GetKeyUp(crouchKey) || Input.GetKeyUp(crouchKey2)) && holdToCrouch)
             {
                 isCrouched = true;
                 Crouch();
@@ -715,6 +716,7 @@ public class FirstPersonController : MonoBehaviour
         GUI.enabled = fpc.enableCrouch;
         fpc.holdToCrouch = EditorGUILayout.ToggleLeft(new GUIContent("Hold To Crouch", "Requires the player to hold the crouch key instead if pressing to crouch and uncrouch."), fpc.holdToCrouch);
         fpc.crouchKey = (KeyCode)EditorGUILayout.EnumPopup(new GUIContent("Crouch Key", "Determines what key is used to crouch."), fpc.crouchKey);
+        fpc.crouchKey2 = (KeyCode)EditorGUILayout.EnumPopup(new GUIContent("Crouch Key", "Determines what key is used to crouch."), fpc.crouchKey);
         fpc.crouchHeight = EditorGUILayout.Slider(new GUIContent("Crouch Height", "Determines the y scale of the player object when crouched."), fpc.crouchHeight, .1f, 1);
         fpc.speedReduction = EditorGUILayout.Slider(new GUIContent("Speed Reduction", "Determines the percent 'Walk Speed' is reduced by. 1 being no reduction, and .5 being half."), fpc.speedReduction, .1f, 1);
         GUI.enabled = true;

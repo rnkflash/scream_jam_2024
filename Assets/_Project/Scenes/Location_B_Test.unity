@@ -490,6 +490,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Point B
       objectReference: {fileID: 0}
+    - target: {fileID: 53343339370712243, guid: f5bd923f1e850d94c8aa78b05b614906,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2742382368833738499, guid: f5bd923f1e850d94c8aa78b05b614906,
         type: 3}
       propertyPath: m_LocalPosition.x

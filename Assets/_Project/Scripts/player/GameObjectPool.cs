@@ -9,8 +9,8 @@ namespace _Project.Scripts.player
     public class GameObjectPool: Singleton<GameObjectPool>
     {
         [SerializeField] private bool collectionCheck = true;
-        [SerializeField] private int defaultCapacity = 10;
-        [SerializeField] private int maxPoolSize = 20;
+        [SerializeField] private int defaultCapacity = 100;
+        [SerializeField] private int maxPoolSize = 100;
 
         private Dictionary<GameObject, ObjectPool<GameObject>> pools = new();
         
@@ -49,6 +49,7 @@ namespace _Project.Scripts.player
 
         public void ReturnObject(GameObject prefab, GameObject obj)
         {
+            obj.transform.parent = transform;
             var pool = GetPool(prefab);
             pool.Release(obj);
         }
