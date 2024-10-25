@@ -20,7 +20,7 @@ namespace _Project.Scripts.locations
         
         public virtual void DeInit()
         {
-            
+            roadGenerator.Unload();
         }
 
         public virtual void OnExit(String exitName)

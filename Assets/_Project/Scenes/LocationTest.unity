@@ -591,27 +591,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1084134758}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &932835553 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7278054527917284478, guid: 871e4a80e89f1f249a23c04fa52c5b58,
-    type: 3}
-  m_PrefabInstance: {fileID: 1771954689678827809}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &932835558
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 932835553}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a2c00357ba04485a63a481ba67e9ee2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  collectionCheck: 1
-  defaultCapacity: 10
-  maxPoolSize: 20
 --- !u!1 &974048568
 GameObject:
   m_ObjectHideFlags: 0
@@ -1376,11 +1355,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7278054527917284478, guid: 871e4a80e89f1f249a23c04fa52c5b58,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 932835558}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 871e4a80e89f1f249a23c04fa52c5b58, type: 3}
 --- !u!1 &3353736131925989422 stripped
 GameObject:

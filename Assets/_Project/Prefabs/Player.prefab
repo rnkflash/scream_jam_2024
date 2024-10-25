@@ -7552,6 +7552,7 @@ GameObject:
   - component: {fileID: 5901060414228545969}
   - component: {fileID: 7416162151047265008}
   - component: {fileID: 4325039683093118194}
+  - component: {fileID: 5413317600951007866}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -7597,6 +7598,8 @@ MonoBehaviour:
   oneMissionMoney: 10000
   money: 0
   isOnMission: 0
+  currentPlayerPosition: {fileID: 0}
+  disableObjectsOnDistance: 300
   moneyKaChing: {fileID: 8300000, guid: 6711adbedb806ee49bd0042a13015324, type: 3}
   afkGhoulJumpScare: {fileID: 4927744373168902278}
 --- !u!82 &7416162151047265008
@@ -7719,6 +7722,21 @@ MonoBehaviour:
     type: 3}
   PointBPrefab: {fileID: 53343339370712243, guid: f5bd923f1e850d94c8aa78b05b614906,
     type: 3}
+--- !u!114 &5413317600951007866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7278054527917284478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a2c00357ba04485a63a481ba67e9ee2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collectionCheck: 1
+  defaultCapacity: 10
+  maxPoolSize: 20
 --- !u!1 &7302916880856322524
 GameObject:
   m_ObjectHideFlags: 0

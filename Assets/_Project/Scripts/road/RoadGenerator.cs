@@ -55,7 +55,7 @@ namespace _Project.Scripts.road
             }
         }
 
-        private void OnDestroy()
+        public void Unload()
         {
             foreach (var pair in objects)
             {
@@ -65,7 +65,7 @@ namespace _Project.Scripts.road
                 }
             }
         }
-
+            
         private GameObject CreateObjectFromPrefab(
             GameObject prefab,
             Vector3 position,
