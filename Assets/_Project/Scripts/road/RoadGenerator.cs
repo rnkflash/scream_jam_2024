@@ -1,6 +1,12 @@
-﻿using _Project.Scripts.scriptables;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using _Project.Scripts.player;
+using _Project.Scripts.scriptables;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.Pool;
+using Random = UnityEngine.Random;
 
 namespace _Project.Scripts.road
 {
@@ -26,7 +32,14 @@ namespace _Project.Scripts.road
 
         private Transform parentForTiles;
 
-        [Button]
+        private List<GameObject> sections;
+
+        [SerializeField] private int loadSectionsAroundPlayer = 2;
+
+        private int currentSection = -1;
+
+        private Dictionary<GameObject, List<GameObject>> objects = new ();
+
         public void Generate(int tiles, Transform startingPositionAndAngle)
         {
             //add all tiles to this parent
@@ -35,14 +48,88 @@ namespace _Project.Scripts.road
             lastRoadTilePosition = startingPositionAndAngle.position;
             lastRoadTileEndRotation = startingPositionAndAngle.rotation.eulerAngles;
 
+            sections = new List<GameObject>();
             for (int i = 0; i < tiles; i++)
             {
-                CreateNextTile();
+                sections.Add(CreateNextTile());
             }
         }
 
-        private void CreateNextTile()
+        private void OnDestroy()
         {
+            foreach (var pair in objects)
+            {
+                foreach (var obj in pair.Value)
+                {
+                    GameObjectPool.Instance.ReturnObject(pair.Key, obj);
+                }
+            }
+        }
+
+        private GameObject CreateObjectFromPrefab(
+            GameObject prefab,
+            Vector3 position,
+            Quaternion rotation,
+            Transform parent
+        )
+        {
+            var obj = GameObjectPool.Instance.GetObject(prefab);
+            if (!objects.ContainsKey(prefab))
+            {
+                objects[prefab] = new List<GameObject>();
+            }
+            objects[prefab].Add(obj);
+            
+            obj.transform.SetPositionAndRotation(position, rotation);
+            obj.transform.SetParent(parent);
+            
+            return obj;
+        }
+
+        private void FixedUpdate()
+        {
+            if (sections.Count == 0) return;
+            
+            var playerPosition = PlayerGlobal.Instance.currentPlayerPosition;
+            var minimalDistance = Vector3.Distance(sections[0].transform.position, playerPosition.position);
+            var closestSection = 0;
+            for (int i = 1; i < sections.Count; i++)
+            {
+                var section = sections[i];
+                var dist = Vector3.Distance(section.transform.position, playerPosition.position);
+                if (dist < minimalDistance)
+                {
+                    minimalDistance = dist;
+                    closestSection = i;
+                }
+            }
+
+            if (currentSection != closestSection)
+            {
+                currentSection = closestSection;
+                OnPlayerEnterSection(currentSection);
+            }
+        }
+
+        private void OnPlayerEnterSection(int section)
+        {
+            int[] sectionsAround = GetIntsAround(section, loadSectionsAroundPlayer, 0, sections.Count - 1);
+
+            for (var i = 0; i < sections.Count; i++)
+            {
+                sections[i].SetActive(sectionsAround.Contains(i));
+            }
+        }
+
+        private int[] GetIntsAround(int current, int radius, int min, int max)
+        {
+            return Enumerable.Range(Math.Max(min, current - radius), Math.Min(max, current + radius)).ToArray();
+        }
+
+        private GameObject CreateNextTile()
+        {
+            GameObject result;
+            
             //need to calculate hills chances
             int willItHill = Random.Range(0, data.hillsPercentage / 10);
             int willNot = Random.Range(0, 10 - data.hillsPercentage / 10);
@@ -72,10 +159,8 @@ namespace _Project.Scripts.road
                     loadingRoadPrefab = data.roadPref_Up;
                 }
 
-                makeRoadSegment(loadingRoadPrefab);
-            }
-
-            if (!hillBuilded)
+                result = makeRoadSegment(loadingRoadPrefab);
+            } else
             {
                 //hills got low chanses :) so, it will be horizontal road not hill
                 //but which one segment of all our prefabs ?
@@ -132,11 +217,9 @@ namespace _Project.Scripts.road
                 {
                     loadingRoadPrefab = data.roadPrefL_Extreme;
                 }
-                else
-                    return;
 
                 //call method of road segment generation
-                makeRoadSegment(loadingRoadPrefab);
+                result = makeRoadSegment(loadingRoadPrefab);
 
                 //call method of creating aside hills for generated above road segment
                 makeSideHills();
@@ -146,13 +229,15 @@ namespace _Project.Scripts.road
 
                 //call method of creating aside props for generated above road segment
                 makeSideProps();
-            }
 
+                
+            }
             hillBuilded = false;
+            return result;
         }
 
         //method of generation of road segment
-        private void makeRoadSegment(GameObject loadingRoadPrefab)
+        private GameObject makeRoadSegment(GameObject loadingRoadPrefab)
         {
             Vector3 position = lastRoadTilePosition;
 
@@ -180,8 +265,7 @@ namespace _Project.Scripts.road
             }
             //if road not horizontal we cancel current road segment and change it by fixing segment(roadPref_LeanR or roadPref_LeanL) 
 
-
-            GameObject lastRoadTile = Instantiate(loadingRoadPrefab, position,
+            GameObject lastRoadTile = CreateObjectFromPrefab(loadingRoadPrefab, position,
                 Quaternion.Euler(lastRoadTileEndRotation), parentForTiles);
             lastRoadTileEnd = lastRoadTile.transform.Find("roadEndCoords");
             lastRoadTilePosition = lastRoadTileEnd.transform.position;
@@ -209,7 +293,7 @@ namespace _Project.Scripts.road
 
                     //creating a vehicle
                     GameObject vehicle =
-                        Instantiate(whichVehicle, position, Quaternion.Euler(lastRoadTileEndRotation), parentForTiles) as GameObject;
+                        CreateObjectFromPrefab(whichVehicle, position, Quaternion.Euler(lastRoadTileEndRotation), parentForTiles) as GameObject;
                     vehicle.transform.position = new Vector3(vehicle.transform.localPosition.x + 2,
                         vehicle.transform.localPosition.y,
                         vehicle.transform.localPosition.z); //сдвигаем машину сразу на свою полосу
@@ -229,6 +313,8 @@ namespace _Project.Scripts.road
                         vehicle.GetComponent<vehicleScript>().nameWP_GO = "laneR1";
                 }
             }
+
+            return lastRoadTile;
         }
 
         //method of aside hills and mountains generation
@@ -257,7 +343,7 @@ namespace _Project.Scripts.road
 
                     //creating hill prefab
                     GameObject mount =
-                        Instantiate(whichMount, placeForMount, Quaternion.Euler(lastRoadTileEndRotation), parentForTiles) as GameObject;
+                        CreateObjectFromPrefab(whichMount, placeForMount, Quaternion.Euler(lastRoadTileEndRotation), parentForTiles) as GameObject;
 
                     //put this hill to road segment GameObject to destroy it by one string of script
                     mount.transform.parent = lastTile.transform;
@@ -283,7 +369,7 @@ namespace _Project.Scripts.road
                     whichMount = data.hillsCount[arrayLenght];
 
                     GameObject mount =
-                        Instantiate(whichMount, placeForMount, Quaternion.Euler(lastRoadTileEndRotation), parentForTiles) as GameObject;
+                        CreateObjectFromPrefab(whichMount, placeForMount, Quaternion.Euler(lastRoadTileEndRotation), parentForTiles) as GameObject;
 
                     mount.transform.parent = lastTile.transform;
 
@@ -329,7 +415,7 @@ namespace _Project.Scripts.road
 
                     //create and put GameObject obstace on road
                     GameObject spoiler =
-                        Instantiate(whichObstacle, placeForSpoilers, Quaternion.Euler(lastRoadTileEndRotation), parentForTiles) as
+                        CreateObjectFromPrefab(whichObstacle, placeForSpoilers, Quaternion.Euler(lastRoadTileEndRotation), parentForTiles) as
                             GameObject;
                     spoiler.transform.parent = lastTile.transform;
                     spoiler.transform.Translate(Vector3.up * 2);
@@ -361,7 +447,7 @@ namespace _Project.Scripts.road
                     whichProp = data.propsCount[arrayLenght];
 
                     GameObject props =
-                        Instantiate(whichProp, placeForProps, Quaternion.Euler(lastRoadTileEndRotation), parentForTiles) as GameObject;
+                        CreateObjectFromPrefab(whichProp, placeForProps, Quaternion.Euler(lastRoadTileEndRotation), parentForTiles) as GameObject;
                     props.transform.parent = lastTile.transform;
 
                     //moving props left or right to the side of the road randomly

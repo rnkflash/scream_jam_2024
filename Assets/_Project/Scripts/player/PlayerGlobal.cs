@@ -19,6 +19,10 @@ namespace _Project.Scripts.player
         public int money = 0;
 
         public bool isOnMission;
+
+        public Transform currentPlayerPosition;
+        
+        public float disableObjectsOnDistance = 300;
         
         private AudioSource audioSource;
         [SerializeField] private AudioClip moneyKaChing;

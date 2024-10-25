@@ -2,6 +2,7 @@ using System;
 using _Project.Scripts.enums;
 using _Project.Scripts.eventbus;
 using _Project.Scripts.eventbus.events;
+using _Project.Scripts.player;
 using _Project.Scripts.utils;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -14,13 +15,25 @@ namespace _Project.Scripts
         [SerializeField] private GameObject carInteriorCamera;
         [SerializeField] private GameObject fpsCamera;
         [SerializeField] private GameObject sceneLight;
+        [SerializeField] private bool lockCursor = true;
         
         void Start()
         {
             Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Locked;
+            LockCursor();
             SwitchCamera(Cameras.FPS);
             sceneLight.SetActive(false);
+        }
+
+        private void OnApplicationFocus(bool hasFocus)
+        {
+            LockCursor();
+        }
+
+        private void LockCursor()
+        {
+            if (lockCursor)
+                Cursor.lockState = CursorLockMode.Locked;
         }
 
         void Update()
@@ -56,12 +69,15 @@ namespace _Project.Scripts
             {
                 case Cameras.FPS:
                     fpsCamera.SetActive(true);
+                    PlayerGlobal.Instance.currentPlayerPosition = fpsCamera.transform;
                     break;
                 case Cameras.TruckInterior:
                     carInteriorCamera.SetActive(true);
+                    PlayerGlobal.Instance.currentPlayerPosition = carInteriorCamera.transform;
                     break;
                 case Cameras.TruckOutside:
                     topDownCamera.SetActive(true);
+                    PlayerGlobal.Instance.currentPlayerPosition = topDownCamera.GetComponent<TopDownCamera>().getCar().transform;
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();

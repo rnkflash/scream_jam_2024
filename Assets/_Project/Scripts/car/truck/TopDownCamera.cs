@@ -11,6 +11,11 @@ public class TopDownCamera : MonoBehaviour
         
     }
 
+    public CarController getCar()
+    {
+        return car;
+    }
+
     void Update()
     {
         UpdateCarInput();
