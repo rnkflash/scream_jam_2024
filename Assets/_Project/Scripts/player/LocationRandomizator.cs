@@ -10,6 +10,7 @@ namespace _Project.Scripts.player
         [SerializeField] private List<GameObject> locationPrefabs;
         [SerializeField] private GameObject PointAPrefab;
         [SerializeField] private GameObject PointBPrefab;
+        [SerializeField] private GameObject PointCPrefab;
         private List<GameObject> lastRandomLocations = new List<GameObject>();
 
         public GameObject GetNextRandomLocationPrefab(Location from)
@@ -30,7 +31,16 @@ namespace _Project.Scripts.player
             var location = newList[random];
 
             if (location == PointAPrefab || location == PointBPrefab)
-                lastRandomLocations.Clear();
+            {
+                if (PlayerGlobal.Instance.money + PlayerGlobal.Instance.oneMissionMoney >=
+                    PlayerGlobal.Instance.goalMoney && !lastRandomLocations.Contains(PointCPrefab) && location == PointAPrefab)
+                {
+                    lastRandomLocations.AddRange(newList);
+                    lastRandomLocations.Add(PointCPrefab);
+                    location = PointCPrefab;
+                } else
+                    lastRandomLocations.Clear();
+            }
             else
                 lastRandomLocations.Add(location);
             

@@ -23,6 +23,8 @@ namespace _Project.Scripts
             LockCursor();
             SwitchCamera(Cameras.FPS);
             sceneLight.SetActive(false);
+            
+            EventBus<AFKGhoulStopHunting>.Pub(new AFKGhoulStopHunting());
         }
 
         private void OnApplicationFocus(bool hasFocus)
@@ -61,22 +63,26 @@ namespace _Project.Scripts
         {
             EventBus<NoInteractableOnTarget>.Pub(new NoInteractableOnTarget());
             
-            carInteriorCamera.SetActive(false);
-            topDownCamera.SetActive(false);
-            fpsCamera.SetActive(false);
-            
             switch (camera)
             {
                 case Cameras.FPS:
                     fpsCamera.SetActive(true);
+                    carInteriorCamera.SetActive(false);
+                    topDownCamera.SetActive(false);
                     PlayerGlobal.Instance.currentPlayerPosition = fpsCamera.transform;
                     break;
                 case Cameras.TruckInterior:
                     carInteriorCamera.SetActive(true);
+                    fpsCamera.SetActive(false);
+                    topDownCamera.SetActive(false);
+
                     PlayerGlobal.Instance.currentPlayerPosition = carInteriorCamera.transform;
                     break;
                 case Cameras.TruckOutside:
                     topDownCamera.SetActive(true);
+                    carInteriorCamera.SetActive(false);
+                    fpsCamera.SetActive(false);
+                    
                     PlayerGlobal.Instance.currentPlayerPosition = topDownCamera.GetComponent<TopDownCamera>().getCar().transform;
                     break;
                 default:

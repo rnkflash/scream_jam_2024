@@ -67,11 +67,6 @@ namespace _Project.Scripts.road
             objects.Clear();
         }
 
-        private void OnDestroy()
-        {
-            Unload();
-        }
-
         private GameObject CreateObjectFromPrefab(
             GameObject prefab,
             Vector3 position,

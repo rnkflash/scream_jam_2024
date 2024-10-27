@@ -1,8 +1,6 @@
-using System;
 using System.Collections;
 using _Project.Scripts.eventbus;
 using _Project.Scripts.eventbus.events;
-using _Project.Scripts.player;
 using _Project.Scripts.utils;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -19,6 +17,7 @@ namespace _Project.Scripts.monster
         
         [SerializeField] private float huntingTimeMax = 10.0f;
         [SerializeField] private float huntingTimeMin = 1.0f;
+        [SerializeField] private float huntingSphereRadiusIncreaseSpeed = 2.0f;
 
         private SphereCollider huntingSphere;
 
@@ -105,7 +104,7 @@ namespace _Project.Scripts.monster
             if (state == State.HUNTING)
             {
                 timer -= Time.deltaTime;
-                huntingSphere.radius += 1.0f * Time.deltaTime;
+                huntingSphere.radius += huntingSphereRadiusIncreaseSpeed * Time.deltaTime;
 
                 if (timer < 0)
                 {

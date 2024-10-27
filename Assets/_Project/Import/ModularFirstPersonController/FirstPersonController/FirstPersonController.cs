@@ -153,8 +153,16 @@ public class FirstPersonController : MonoBehaviour
         }
     }
 
+    [SerializeField] private bool ignoreFirstHunting = true;
+
     private void OnEnable()
     {
+        if (ignoreFirstHunting)
+        {
+            Debug.Log("ignoring");
+            ignoreFirstHunting = false;
+            return;
+        }
         EventBus<AFKTimerEvent>.Pub(new AFKTimerEvent(true));
     }
 
@@ -210,6 +218,8 @@ public class FirstPersonController : MonoBehaviour
         }
 
         #endregion
+        
+        EventBus<AFKTimerEvent>.Pub(new AFKTimerEvent(false));
     }
 
     float camRotation;
@@ -716,7 +726,7 @@ public class FirstPersonController : MonoBehaviour
         GUI.enabled = fpc.enableCrouch;
         fpc.holdToCrouch = EditorGUILayout.ToggleLeft(new GUIContent("Hold To Crouch", "Requires the player to hold the crouch key instead if pressing to crouch and uncrouch."), fpc.holdToCrouch);
         fpc.crouchKey = (KeyCode)EditorGUILayout.EnumPopup(new GUIContent("Crouch Key", "Determines what key is used to crouch."), fpc.crouchKey);
-        fpc.crouchKey2 = (KeyCode)EditorGUILayout.EnumPopup(new GUIContent("Crouch Key", "Determines what key is used to crouch."), fpc.crouchKey);
+        fpc.crouchKey2 = (KeyCode)EditorGUILayout.EnumPopup(new GUIContent("Crouch Key 2", "Determines what key is used to crouch."), fpc.crouchKey2);
         fpc.crouchHeight = EditorGUILayout.Slider(new GUIContent("Crouch Height", "Determines the y scale of the player object when crouched."), fpc.crouchHeight, .1f, 1);
         fpc.speedReduction = EditorGUILayout.Slider(new GUIContent("Speed Reduction", "Determines the percent 'Walk Speed' is reduced by. 1 being no reduction, and .5 being half."), fpc.speedReduction, .1f, 1);
         GUI.enabled = true;

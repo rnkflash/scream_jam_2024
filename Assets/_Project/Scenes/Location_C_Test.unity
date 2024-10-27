@@ -421,6 +421,16 @@ PrefabInstance:
       propertyPath: trailer
       value: 
       objectReference: {fileID: 1593081523}
+    - target: {fileID: 4409758073620341225, guid: 871e4a80e89f1f249a23c04fa52c5b58,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4409758073620341225, guid: 871e4a80e89f1f249a23c04fa52c5b58,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 55.8
+      objectReference: {fileID: 0}
     - target: {fileID: 7278054527917284478, guid: 871e4a80e89f1f249a23c04fa52c5b58,
         type: 3}
       propertyPath: m_Name
@@ -429,7 +439,7 @@ PrefabInstance:
     - target: {fileID: 7612128018542440422, guid: 871e4a80e89f1f249a23c04fa52c5b58,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.95
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7612128018542440422, guid: 871e4a80e89f1f249a23c04fa52c5b58,
         type: 3}
@@ -439,7 +449,7 @@ PrefabInstance:
     - target: {fileID: 7612128018542440422, guid: 871e4a80e89f1f249a23c04fa52c5b58,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 84.21
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7612128018542440422, guid: 871e4a80e89f1f249a23c04fa52c5b58,
         type: 3}
@@ -475,6 +485,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8997468776458048774, guid: 871e4a80e89f1f249a23c04fa52c5b58,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8997468776458048774, guid: 871e4a80e89f1f249a23c04fa52c5b58,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 62.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1101,6 +1121,7 @@ MonoBehaviour:
   carInteriorCamera: {fileID: 820689492}
   fpsCamera: {fileID: 820689494}
   sceneLight: {fileID: 1232298233}
+  lockCursor: 1
 --- !u!4 &1872102348
 Transform:
   m_ObjectHideFlags: 0
