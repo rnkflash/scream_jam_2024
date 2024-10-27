@@ -1491,7 +1491,6 @@ MonoBehaviour:
   enableCrouch: 1
   holdToCrouch: 0
   crouchKey: 306
-  crouchKey2: 99
   crouchHeight: 0.75
   speedReduction: 0.5
   enableHeadBob: 1
@@ -2694,7 +2693,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 0.7560741, z: 2.337654}
+  m_Size: {x: 2.75, y: 1.15, z: 2.22}
   m_Center: {x: 0, y: -0.061530888, z: -0.004055023}
 --- !u!1 &2744936283613682824
 GameObject:
@@ -4356,53 +4355,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8528232475867555178}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &4206406362373398505
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1240306204982475875}
-  - component: {fileID: 3722250867414142010}
-  m_Layer: 0
-  m_Name: ObjectPool
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1240306204982475875
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4206406362373398505}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7612128018542440422}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3722250867414142010
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4206406362373398505}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a2c00357ba04485a63a481ba67e9ee2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  collectionCheck: 1
-  defaultCapacity: 100
-  maxPoolSize: 100
 --- !u!1 &4251918721767526013
 GameObject:
   m_ObjectHideFlags: 0
@@ -5252,7 +5204,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4619778119105752359
 Transform:
   m_ObjectHideFlags: 0
@@ -5278,7 +5230,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -5309,7 +5261,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 183
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 8400000, guid: f10135ab4689c49409fed85841482be1, type: 2}
+  m_TargetTexture: {fileID: 8400000, guid: e8b9632987c606c4ea13abcb3de7af78, type: 2}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
@@ -5339,7 +5291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_RenderShadows: 0
+  m_RenderShadows: 1
   m_RequiresDepthTextureOption: 2
   m_RequiresOpaqueTextureOption: 2
   m_CameraType: 0
@@ -6116,7 +6068,6 @@ MonoBehaviour:
   - {fileID: 108623548479244294}
   - {fileID: 7630878105169366232}
   eachMoneyKu4kaAmount: 10000
-  winPic: {fileID: 0}
 --- !u!65 &2828194357827759927
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7627,7 +7578,6 @@ Transform:
   - {fileID: 6684467214501112953}
   - {fileID: 982961727441570950}
   - {fileID: 2709721145169239910}
-  - {fileID: 1240306204982475875}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5901060414228545969
@@ -7647,8 +7597,6 @@ MonoBehaviour:
   oneMissionMoney: 10000
   money: 0
   isOnMission: 0
-  currentPlayerPosition: {fileID: 0}
-  disableObjectsOnDistance: 300
   moneyKaChing: {fileID: 8300000, guid: 6711adbedb806ee49bd0042a13015324, type: 3}
   afkGhoulJumpScare: {fileID: 4927744373168902278}
 --- !u!82 &7416162151047265008
@@ -7767,6 +7715,7 @@ MonoBehaviour:
   - {fileID: 53343339370712243, guid: 99f090f4bf4dd0845bc8300ada92e657, type: 3}
   - {fileID: 53343339370712243, guid: 466eb8a63c925944c9d48eb4e6c52360, type: 3}
   - {fileID: 53343339370712243, guid: 66c6b79fb5f68da46b758653bac64233, type: 3}
+  - {fileID: 53343339370712243, guid: e68bee9acb9d21d468675df8cb761bc3, type: 3}
   PointAPrefab: {fileID: 53343339370712243, guid: 0146ed6a551633b4d97aee04fcb7d1fb,
     type: 3}
   PointBPrefab: {fileID: 53343339370712243, guid: f5bd923f1e850d94c8aa78b05b614906,
@@ -9016,7 +8965,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -9077,7 +9026,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_RenderShadows: 0
+  m_RenderShadows: 1
   m_RequiresDepthTextureOption: 2
   m_RequiresOpaqueTextureOption: 2
   m_CameraType: 0
@@ -10000,9 +9949,8 @@ MonoBehaviour:
   huntingTimeMax: 10
   huntingTimeMin: 1
   model: {fileID: 4529175731939719952}
-  huntingRoar: {fileID: 8300000, guid: 9e6882d349c3f0c4b9228d7dae287002, type: 3}
-  lifeTimeMin: 30
-  lifeTimeMax: 60
+  huntingRoar: {fileID: 8300000, guid: 253c3db0cb59d4441959de4305ce2eb8, type: 3}
+  lifeTime: 30
 --- !u!82 &8210490742410213942
 AudioSource:
   m_ObjectHideFlags: 0
